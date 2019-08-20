@@ -17,7 +17,7 @@
 				},
 				"text": {
 					"headline": 			"SARAH",
-					"text": 				"<p style='text-align:justify;'>Sarah represents girls in Kampala aged 15–19 years living in poor households. Her father left after her youngest sibling was born, so Sarah, her two brothers and younger sister have been raised by their mother. Sarah’s two brothers go to a public school, while her four-year-old sister stays at home with their mother. All the family sleep in the same room in their one-bedroomed house in Kisenyi. <br><br><font size='2'><b>On average, urban poor households have six members and 62 per cent of urban households sleep in one room. </b><br><i>(UNICEF Report: Emerging Global Challenges: Climate-Related Hazards and Urbanization: Protecting Uganda’s Children, 2017) </i></font><br><br>Until last year, Sarah went to a public school and reached primary grade six (average age 12). But last year her mother was unable to afford to pay for Sarah and her brothers’ school breakfast and lunch so Sarah had to drop out of school. Although primary education at public schools is officially free, parents are expected to pay for their children’s  morning porridge and lunch. <font size='2'><i>  (EPRC: Education, Marriage, Fertility and Labour market Experiences of Young Women in Uganda: Evidence from a Qualitative Assessment, 2018) </font><br><br><font size='2'><b>43 per cent of girls aged 15–19 in Kampala have dropped out of school. </b><br><i>(UNICEF Report: Emerging Global Challenges: Climate-Related Hazards and Urbanization: Protecting Uganda’s Children, 2017)</i></font><br><br><a href=https://geo-gecko.github.io/socprot/pages/interactiveMap/index.html>See social infrastructure map for Kampala</a></p>"
+					"text": 				"<p style='text-align:justify;'>Sarah represents girls in Kampala aged 15–19 years living in poor households. Her father left after her youngest sibling was born, so Sarah, her two brothers and younger sister have been raised by their mother. Sarah’s two brothers go to a public school, while her four-year-old sister stays at home with their mother. All the family sleep in the same room in their one-bedroomed house in Kisenyi. <br><br><font size='10'><b>On average, urban poor households have six members and 62 per cent of urban households sleep in one room. </b><br><i>(UNICEF Report: Emerging Global Challenges: Climate-Related Hazards and Urbanization: Protecting Uganda’s Children, 2017) </i></font><br><br>Until last year, Sarah went to a public school and reached primary grade six (average age 12). But last year her mother was unable to afford to pay for Sarah and her brothers’ school breakfast and lunch so Sarah had to drop out of school. Although primary education at public schools is officially free, parents are expected to pay for their children’s  morning porridge and lunch. <font size='2'><i>  (EPRC: Education, Marriage, Fertility and Labour market Experiences of Young Women in Uganda: Evidence from a Qualitative Assessment, 2018) </font><br><br><font size='2'><b>43 per cent of girls aged 15–19 in Kampala have dropped out of school. </b><br><i>(UNICEF Report: Emerging Global Challenges: Climate-Related Hazards and Urbanization: Protecting Uganda’s Children, 2017)</i></font><br><br><a href=https://geo-gecko.github.io/socprot/pages/interactiveMap/index.html>See social infrastructure map for Kampala</a></p>"
 				
 				},
 				"media": {
@@ -177,29 +177,8 @@
 					"credit":				"UNICEF/FRANCIS EMORUT",
 					"caption":			""
 				}
-			},
-			{
-				"type": 					"", 
-
-				"date": 					"1835",
-				"location": {
-					"lat": 				0.334995,
-					"lon": 				32.574363,
-					"name": 				"END",
-					"zoom": 				12,
-					"line": 				true,
-					"line_color":			"#1e90ff"
-				},
-				"text": {
-                "headline": "The Uganda Child Helpline",
-                "text": "<p style='text-align:justify;'>The Uganda Child Helpline, also known by its brand name Sauti, offers a toll-free telephone service on the short code 116 which is accessible on all telecommunication networks in the country. The telephone service operates 24/7 and is just one of the ways in which the Child Helpline aims to protect children. Other approaches employed by the Helpline to offer child protection include: <ul><li>Handling walk-in clients</li><li>Responding to cases reported through the U-report platform</li><li>Follow up of child abuse cases reported through various Media (including social media)</li><li>Handling cases that entail Online Child Sexual Abuse</li><li>Community awareness raising campaigns in schools, communities and on radios & television etc.</li></ul></p>"
-            },
-				"media": {
-					"url": 				"css/images/sarah/Step9.jpg",
-					"credit":				"UNICEF/FRANCIS EMORUT",
-					"caption":			""
-				}
 			}
+			
 		]
 	}
 }

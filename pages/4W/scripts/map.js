@@ -1,3 +1,4 @@
+//function that load the map on when the window loads 
 $(window).on('load', function() {
 	var documentSettings = {};
 	var markerColors = [];
@@ -50,7 +51,9 @@ $(window).on('load', function() {
 
 		if ((latSet && lonSet) || !points) {
 			center = L.latLng(lat, lon);
-		} else {
+		}
+		 else {
+
 			center = points.getBounds().getCenter();
 		}
 
@@ -67,7 +70,7 @@ $(window).on('load', function() {
 	   * column in the spreadsheet.
 	   */
 	function determineLayers(points) {
-		;
+		
 		(function (d3, $, queue, window) {
 			'use strict';
 			// https://www.humanitarianresponse.info/en/operations/afghanistan/cvwg-3w
@@ -79,7 +82,7 @@ $(window).on('load', function() {
 			};
 			String.prototype.capitalize = function () {
 				return this.charAt(0).toUpperCase() + this.slice(1);
-			}
+			};
 			// function capitalizeFirstLetter(string) {
 			//   return string.charAt(0).toUpperCase() + string.slice(1);
 			// }
@@ -118,7 +121,7 @@ $(window).on('load', function() {
 			global.currentEvent;
 			// global.needRefreshDistrict;
 
-
+//function tha refresh the counts on load 
 			function refreshCounts() {
 				d3.select("#district-count").text(global.districtCount);
 				d3.select("#sector-count").text(global.sectorCount);
@@ -149,12 +152,12 @@ $(window).on('load', function() {
 
 				_selectedDataset = dataset;
 			}
-
+		//function that check error, the Json files sector and relationship
 			function ready(error, ugandaGeoJson, sector, relationship) {
 				//standard for if data is missing, the map shouldnt start.
 				if (error) {
 					throw error;
-				};
+				}
 				ugandaGeoJson.features.map(function (d) {
 					d.properties.DNAME_06 = d.properties.dist;
 				});
@@ -218,14 +221,14 @@ $(window).on('load', function() {
 				// When the user clicks on <span> (x), close the modal
 				span.onclick = function() {
 					modal.style.display = "none";
-				}
+				};
 
 				// When the user clicks anywhere outside of the modal, close it
 				window.onclick = function(event) {
 					if (event.target == modal) {
 						modal.style.display = "none";
 					}
-				}
+				};
 
 				$('.modal-content').resizable({
 					alsoResize: ".modal-dialog",
@@ -259,7 +262,7 @@ $(window).on('load', function() {
 				updateLeftPanel(districtList, sectorList, agencyList, donorList, actorTypeList, dataset);
 
 
-
+				// varaible that control the visualization of the map, the zoom level and the sidebar
 				var h = (window.innerHeight ||
 						 document.documentElement.clientHeight ||
 						 document.body.clientHeight);
@@ -282,13 +285,13 @@ $(window).on('load', function() {
 
 				var sidebar1 = L.control.sidebar('sidebar-right', {position: "right"}).addTo(map);
 
-				sidebar1.open("home1")
-
+				sidebar1.open("home1");
+				//the map bound and setting the max bounds
 				map.bounds = [],
 					map.setMaxBounds([
 					[4.5,29.5],
 					[-1.5,34.5]
-				]);
+				])
 				map.options.maxZoom=12;
 				map.options.minZoom=7;
 
@@ -311,7 +314,7 @@ $(window).on('load', function() {
 				var datasetAgency = d3.nest().key(function (d) {
 					return d["Agency name"];
 				}).entries(dataset);
-
+				//function that update the table data 
 				function updateTable(data) {
 
 					d3.select('#page-wrap').select('table').remove();
@@ -324,17 +327,19 @@ $(window).on('load', function() {
 					.data(titlesText).enter()
 					.append('th')
 					.text(function (d) {
-						return d
+						return d;
 					})
 					.on('click', function (d) {
 						headers.attr('class', 'header');
 						if (sortAscending) {
 							rows.sort(function(a, b) { 
-								return d3.descending(a.key, b.key)
+								return d3.descending(a.key, b.key);
 							});
 							sortAscending = false;
 							this.className = 'aes';
-						} else {
+						} 
+
+						else {
 							rows.sort(function(a,b){
 								return d3.ascending(a.key, b.key)
 							});
@@ -349,12 +354,16 @@ $(window).on('load', function() {
 						return titles.map(function (k) {
 							if (k === 'values') {
 								return { 'value': +(d[k].length), 'name': k};
-							} else {
+							} 
+
+							else {
 								return { 'value': d[k], 'name': k};
 							}
 
 						});
-					}).enter()
+					})
+					//append data into the table 
+					.enter()
 						.append('td')
 						.attr('data-th', function (d) {
 						return d.name;
@@ -362,26 +371,28 @@ $(window).on('load', function() {
 						.text(function (d) {
 						return d.value;
 					}).on("click", function (d) {
-
+						//checking if the parish data filter is equal to the district list filter
 						if (d.name === "key") {
 							var parishDataFilter = districtList.filter(function (k) {
 								if (d.value === k.key) {
 									var str = "<thead><tr><th style='border: 1px solid #ccc!important; width: 15%; text-decoration: none !important; text-align: left;'>Agency Name</th> <th style='border: 1px solid #ccc!important; width: 65%; text-decoration: none !important; text-align: left;'>Project Title</th><th style='border: 1px solid #ccc!important; width: 10%; text-decoration: none !important; border: 1px solid #ccc!important; text-align: left;'>Project Start</th><th style='border: 1px solid #ccc!important; width: 10%; text-decoration: none !important; border: 1px solid #ccc!important; text-align: left;'>Project End</th></tr></thead>";
-
+									//looping through the tool tip list 
 									var tooltipList = "";
 									var i = 0;
 									while (i < k.values.length) {
 										tooltipList = tooltipList + ("<tr><td style='border: 1px solid #ccc!important; width: 15%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Agency name"] + "</td> <td style='border: 1px solid #ccc!important; width: 65%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Detailed Activity description"] + "</td><td style='border: 1px solid #ccc!important; width: 10%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Start (month)"] + "</td><td style='border: 1px solid #ccc!important; text-decoration: none !important; width: 10%; text-align: left;'>" + k.values[i]["End (month)"] + "</td></tr>");
-										i++
-									}				
+										i++;
+									}
+									//getting the elements from the html page				
 									document.getElementById('tbl-title').innerHTML = d.value;
 									document.getElementById('tbl-header').innerHTML = str;
 									document.getElementById('tbl-content').innerHTML = tooltipList;
 									modal.style.display = "block";	
 								}
-							})
+							});
 							}	
 					})
+
 						.on("mouseover", function (d){
 						if(d.name === "key") {
 							d3.select(this).style("cursor", "pointer");
@@ -390,11 +401,11 @@ $(window).on('load', function() {
 				}
 
 				var top5Values = datasetNest.sort(function(a,b){
-					return d3.ascending(a.key, b.key)
+					return d3.ascending(a.key, b.key);
 				}).slice(1);
 				updateTable(top5Values);
 
-
+				//function to update the table 
 				function updateTable1(data) {
 
 					d3.select('#page-wrap1').select('table').remove();
@@ -407,7 +418,7 @@ $(window).on('load', function() {
 					.data(titlesText).enter()
 					.append('th')
 					.text(function (d) {
-						return d
+						return d;
 					})
 					.on('click', function (d) {
 						headers.attr('class', 'header');
@@ -417,7 +428,9 @@ $(window).on('load', function() {
 							});
 							sortAscending = false;
 							this.className = 'aes';
-						} else {
+						} 
+
+						else {
 							rows.sort(function(a,b){
 								return d3.ascending(a.key, b.key)
 							});
@@ -434,7 +447,9 @@ $(window).on('load', function() {
 						return titles.map(function (k) {
 							if (k === 'values') {
 								return { 'value': +(d[k].length), 'name': k};
-							} else {
+							} 
+
+							else {
 								return { 'value': d[k], 'name': k};
 							}
 
@@ -457,14 +472,14 @@ $(window).on('load', function() {
 									var i = 0;
 									while (i < k.values.length) {
 										tooltipList = tooltipList + ("<tr><td style='border: 1px solid #ccc!important; width: 15%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Parish"] + "</td> <td style='border: 1px solid #ccc!important; width: 65%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Detailed Activity description"] + "</td><td style='border: 1px solid #ccc!important; width: 10%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Start (month)"] + "</td><td style='border: 1px solid #ccc!important; text-decoration: none !important; width: 10%; text-align: left;'>" + k.values[i]["End (month)"] + "</td></tr>");
-										i++
+										i++;
 									}					
 									document.getElementById('tbl-title').innerHTML = d.value;
 									document.getElementById('tbl-header').innerHTML = str;
 									document.getElementById('tbl-content').innerHTML = tooltipList;
 									modal.style.display = "block";	
 								}
-							})
+							});
 							}	
 					})
 						.on("mouseover", function (d){
@@ -475,11 +490,11 @@ $(window).on('load', function() {
 				}
 
 				var top5Values = datasetAgency.sort(function(a,b){
-					return d3.ascending(a.key, b.key)
+					return d3.ascending(a.key, b.key);
 				}).slice(1);
 				updateTable1(top5Values);
 
-
+// defining the counties in an empty array
 				var countries = [];
 				var countriesOverlay = L.d3SvgOverlay(function (sel, proj) {
 					var projection = proj.pathFromGeojson.projection;
@@ -505,7 +520,8 @@ $(window).on('load', function() {
 								d.properties._unAgencyList = d3.nest().key(function (a) {
 									return a.Actor_Type;
 									//return a.Actor_Type;
-								}).entries(c.values);
+								})
+								.entries(c.values);
 								d.properties._ipAgencyList = d3.nest().key(function (a) {
 									return a.Actor_Type;
 								}).entries(c.values);
@@ -679,7 +695,7 @@ $(window).on('load', function() {
 									1];
 								color.domain(domain);
 							}
-						})
+						});
 					})
 						.style("stroke", function (d) {
 						return d.properties._agencyList ? "#f00" : "#00000000"; //#3CB371
@@ -709,7 +725,7 @@ $(window).on('load', function() {
 				d3.select("#d3-map-refresh").on("click", refreshMap);
 
 
-
+				//function that update the object 
 				function onlyUniqueObject(data) {
 					data = data.filter(function (d, index, self) {
 						return self.findIndex(function (t) {
@@ -718,7 +734,7 @@ $(window).on('load', function() {
 					});
 					return data;
 				}
-
+				//filters the selected Item
 				function filterSelectedItem(item, c, needRemove) {
 					if (needRemove) {
 						global[item] = global[item].filter(function (a) {
@@ -836,7 +852,7 @@ $(window).on('load', function() {
 									1];
 								color.domain(domain);
 							}
-						})
+						});
 					})
 						.style("stroke", function (d) {
 						return d.properties._numberOfAgencies ? "#f00" : "#00000000"; //#3CB371
@@ -1005,7 +1021,7 @@ $(window).on('load', function() {
 				}
 
 
-
+				//update on the left panel where district list sector list and check if they match 
 				function updateLeftPanel(districtList, sectorList, agencyList, donorList, actorTypeList, dataset) {
 					if (global.currentEvent !== "district") {
 						districtList.map(function (a) {
@@ -1098,8 +1114,8 @@ $(window).on('load', function() {
 						});
 						_agencyList
 							.html(function(d) {
-							return d.key
-						})
+							return d.key;
+						});
 						_agencyList.exit().remove();
 					}
 
@@ -1115,7 +1131,7 @@ $(window).on('load', function() {
 							var needRemove = $(d3.select(this).node()).hasClass("d3-active"); //d3.select(this).attr("class");//d3-active
 							d3.select(this).classed("d3-active", !needRemove).style("background", needRemove ? "transparent" :"#13988e");
 							// myFilterByAgency(c, needRemove);
-							global.currentEvent = "donor"
+							global.currentEvent = "donor";
 							myFilter(c, global.currentEvent, needRemove);
 							if(global.selectedDonor.length === 0){
 								refreshMap();}
@@ -1179,7 +1195,7 @@ $(window).on('load', function() {
 				var datalayerChildPoverty;
 				var datalayerPoverty12;
 				var datalayerChildPoverty12;
-
+				//functio that set the colors on the layers on the map 
 				$.getJSON('data/kampalaParishes__.geojson', function(data){
 					function getColorPoverty12(d) {
 						return d > 0.565  ? 'rgb(23,78,105)' :
@@ -1342,7 +1358,7 @@ $(window).on('load', function() {
 							map.removeLayer(datalayerPoverty12);
 							map.removeLayer(datalayerChildPoverty12);
 
-						})
+						});
 
 					});
 

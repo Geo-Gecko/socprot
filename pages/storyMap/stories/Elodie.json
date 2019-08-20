@@ -17,7 +17,7 @@
 				},
 				"text": {
 					"headline": 			"Elodie",
-					"text": 				"<p style='text-align:justify;'>Elodie represents female refugees in Kampala aged 13–17 years who are not attending school. At just 16, Elodie is the head of her household. Both her parents were killed before she and her two younger siblings – her 10-year-old sister Aminah and her eight-year-old brother Vinnie – fled the Democratic Republic of Congo (DRC). As life at the camp on the Ugandan border was very hard, Elodie decided to bring her siblings to Kampala. They now live in Katwe II, one of the city’s poorest neighbourhoods, where 77 per cent of the refugee populationis from the DRC. <font size='2'> <i> (AGORA 2018:  Understanding the Needs of Urban Refugees and Host Communities Residing In Vulnerable Neighborhoods of Kampala)</i></font><br><br>At home in the DRC, Elodie was a senior three student with dreams of becoming a teacher. However, because she has to take care of her younger siblings, doesn’t speak very good English and can’t afford basic school materials, she hasn’t been able to continue her education in Uganda. Instead, she’s learning to make soap and candles on a training programme provided by a local NGO. By night, because she needs money to provide for herself and her siblings, Elodie works in a bar and as a sex worker. The family lives in a small, dilapidated cubicle-like house, which they rent for 15,000 USh per month. During the rainy seasons, water floods the whole house and, since the front door can easily be pushed open when the children are asleep, the house is unsafe.</p>"
+					"text": 				"<p style='text-align:justify;'>Elodie represents female refugees in Kampala aged 13–17 years who are not attending school. At just 16, Elodie is the head of her household. Both her parents were killed before she and her two younger siblings – her 10-year-old sister Aminah and her eight-year-old brother Vinnie – fled the Democratic Republic of Congo (DRC). As life at the camp on the Ugandan border was very hard, Elodie decided to bring her siblings to Kampala. They now live in Katwe II, one of the city’s poorest neighbourhoods, where 77 per cent of the refugee population is from the DRC. <font size='2'> <i> (AGORA 2018:  Understanding the Needs of Urban Refugees and Host Communities Residing In Vulnerable Neighborhoods of Kampala)</i></font><br><br>At home in the DRC, Elodie was a senior three student with dreams of becoming a teacher. However, because she has to take care of her younger siblings, doesn’t speak very good English and can’t afford basic school materials, she hasn’t been able to continue her education in Uganda. Instead, she’s learning to make soap and candles on a training programme provided by a local NGO. By night, because she needs money to provide for herself and her siblings, Elodie works in a bar and as a sex worker. The family lives in a small, dilapidated cubicle-like house, which they rent for 15,000 USh per month. During the rainy seasons, water floods the whole house and, since the front door can easily be pushed open when the children are asleep, the house is unsafe.</p>"
 				
 				},
 				"media": {
@@ -54,15 +54,15 @@
 				"uniqueid": 				"",
 				"date": 					"1851",
 				"location": {
-					"lat": 				0.297019,
-					"lon": 				32.574709,
+					"lat": 				0.294755,
+					"lon": 				32.577189,
 					"zoom": 				17,
 					"line": 				true,
 					"line_color":			"#1e90ff"
 				},
 				"text": {
 					"headline": 			"Travelling to school",
-					"text": 				"<p style='text-align:justify;'>Elodie dresses her siblings and at 7.30 am walks them to school to ensure that they get there safely on Kampala’s busy roads. It takes them 20 minutes to reach the primary school in Taawo, one of the zones in Katwe II. <br> <br><a href=https://geo-gecko.github.io/socprot/pages/interactiveMap/index.html>See infrastructure map for Kampala</a></p>"
+					"text": 				"<p style='text-align:justify;'>Elodie dresses her siblings and at 7.30 am walks them to school to ensure that they get there safely on Kampala’s busy roads. It takes them 20 minutes to reach the primary school in Taawo, one of the zones in Katwe II. <br> <br></p>"
 				
 				},
 				"media": {
@@ -140,8 +140,8 @@
 				"uniqueid": 				"",
 				"date": 					"1862",
 				"location": {
-					"lat": 				0.294755,
-					"lon": 				32.577189,
+					"lat": 				0.297019,
+					"lon": 				32.574709,
 					"zoom": 				17,
 					"line": 				true
 				},
