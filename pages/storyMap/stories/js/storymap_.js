@@ -17742,7 +17742,7 @@ VCO.StoryMap = VCO.Class.extend({
 		console.log(menu);
 //	  var menu = document.getElementsByClassName('vco-menubar');
 //		console.log(menu);
-		menu[0].insertAdjacentHTML('afterend', "<span class='vco-menubar-button'><a href='../index.html'>Select another story</a></span>");
+		menu[0].insertAdjacentHTML('afterend', "<span class='vco-menubar-button'><a href='../index.html'>Select another story</a></span><span class='vco-menubar-button'><a href='../../../index.html'>Go Home</a></span>");
 		
 		
 		console.log(menu);

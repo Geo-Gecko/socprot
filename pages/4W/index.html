@@ -57,7 +57,7 @@
 
 			html, body, #map {
 				height: 100%;
-				font-size: 10pt;
+				font-size: 0.75rem;
 			}
 
 			.lorem {
@@ -82,8 +82,8 @@
 				<table id="modal-body" class="modal-body">
 				</table> -->
 					<!--for demo wrap-->
-					<div style="display:flex;width:100%;background-color: #174e69;color:white;">
-						<h1 id='tbl-title' style="width: 97.5%;">Fixed Table header</h1><span class="close">&times;</span>
+					<div style="display:flex;width:100%;background-color: #174e69;color:white; margin-top: 2.5% !important; border-top-right-radius: 10px !important; border-top-left-radius: 10px !important;">
+						<h1 id='tbl-title' style="width: 97.5%;padding: 0.5%;">Fixed Table header</h1><span class="close" style="font-size: 3rem;color: white;">&times;</span>
 					</div>
 					
 					
@@ -118,14 +118,13 @@
 			<div class="sidebar-content">
 				<div class="sidebar-pane" id="home">
 					<h1 class="sidebar-header">
-						Filters
+						Filters (Who does What Where and When)
 						<span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
 					</h1>
 
 					<div class="menu-panel">
-						<p id="d3-map-refresh">Reset Filters</p>
-						<!--						<img src = "./css/reset.svg" style="border-radius: 50px;width:30px;height:30px; box-shadow: 0px 5px 5px grey;" title = "Reset Filters" id= "reset">-->
-
+							<p class="nav nav-tabs" role="tablist"><a class="nav-item"><a id="d3-map-refresh" class="nav-link mbr-fonts-style show display-7" role="tab" data-toggle="tab" >Reset Filters</a></a></p>
+							
 					</div>
 					<div class="list-container">
 						<div class="col-md-12">
@@ -183,25 +182,25 @@
 						<span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
 					</h1>
 
-					<div class="top-panel col-md-8 col-sm-8">
+					<div class="top-panel">
 
 
-						<div class="head col-md-2 col-sm-2">
+						<div class="head" style="float: left;">
 							<p class="custom-count-header" style="font-size: 16px;"><br>Agencies </p>
 							<p id="agency-count" class="custom-count">0</p>
 						</div>
-						<div class=" head col-md-2 col-sm-2">
+						<div class=" head">
 							<p class="custom-count-header" style="font-size: 16px;"><br>Sectors </p>
 							<p id="sector-count" class="custom-count">0</p>
 						</div>
 					</div> <br><br><br><br><br><br>
-					<div class="top-panel col-md-8 col-sm-8">
+					<div class="top-panel">
 
-						<div class="head col-md-2 col-sm-2">
+						<div class="head" style="float: left;">
 							<p class="custom-count-header" style="font-size: 16px;"><br>Parishes </p>
 							<p id="district-count" class="custom-count">0</p>
 						</div>
-						<div class="head col-md-2 col-sm-2">
+						<div class="head">
 							<p class="custom-count-header" style="font-size: 16px;"><br>Beneficiaries </p>
 							<p id="beneficiary-count" class="custom-count">0</p>
 						</div>

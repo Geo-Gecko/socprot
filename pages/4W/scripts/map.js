@@ -1,5 +1,5 @@
 //function that load the map on when the window loads 
-$(window).on('load', function() {
+$(window).on('load', function () {
 	var documentSettings = {};
 	var markerColors = [];
 
@@ -52,7 +52,7 @@ $(window).on('load', function() {
 		if ((latSet && lonSet) || !points) {
 			center = L.latLng(lat, lon);
 		}
-		 else {
+		else {
 
 			center = points.getBounds().getCenter();
 		}
@@ -70,7 +70,7 @@ $(window).on('load', function() {
 	   * column in the spreadsheet.
 	   */
 	function determineLayers(points) {
-		
+
 		(function (d3, $, queue, window) {
 			'use strict';
 			// https://www.humanitarianresponse.info/en/operations/afghanistan/cvwg-3w
@@ -89,7 +89,7 @@ $(window).on('load', function() {
 			var _selectedDataset;
 			var dataset;
 			queue()
-			// .defer(d3.json, "./UgandaDistricts.geojson")//DNAME_06
+				// .defer(d3.json, "./UgandaDistricts.geojson")//DNAME_06
 				.defer(d3.json, "./data/povertyAndPopulationDensity.geojson")
 				.defer(d3.csv, "./data/mapValues.csv")
 				.defer(d3.csv, "./data/dataset2.csv")
@@ -121,7 +121,7 @@ $(window).on('load', function() {
 			global.currentEvent;
 			// global.needRefreshDistrict;
 
-//function tha refresh the counts on load 
+			//function tha refresh the counts on load 
 			function refreshCounts() {
 				d3.select("#district-count").text(global.districtCount);
 				d3.select("#sector-count").text(global.sectorCount);
@@ -152,7 +152,7 @@ $(window).on('load', function() {
 
 				_selectedDataset = dataset;
 			}
-		//function that check error, the Json files sector and relationship
+			//function that check error, the Json files sector and relationship
 			function ready(error, ugandaGeoJson, sector, relationship) {
 				//standard for if data is missing, the map shouldnt start.
 				if (error) {
@@ -210,7 +210,7 @@ $(window).on('load', function() {
 					return d["Actor type"];
 				}).sortKeys(d3.ascending).entries(points);
 
-				var beneficiaries = d3.sum(points, function(d){return parseFloat(d.Beneficiaries)});
+				var beneficiaries = d3.sum(points, function (d) { return parseFloat(d.Beneficiaries) });
 
 				// Get the modal
 				var modal = document.getElementById('myModal');
@@ -219,12 +219,12 @@ $(window).on('load', function() {
 				var span = document.getElementsByClassName("close")[0];
 
 				// When the user clicks on <span> (x), close the modal
-				span.onclick = function() {
+				span.onclick = function () {
 					modal.style.display = "none";
 				};
 
 				// When the user clicks anywhere outside of the modal, close it
-				window.onclick = function(event) {
+				window.onclick = function (event) {
 					if (event.target == modal) {
 						modal.style.display = "none";
 					}
@@ -238,7 +238,7 @@ $(window).on('load', function() {
 
 				$('#myModal').on('show.bs.modal', function () {
 					$(this).find('.modal-body').css({
-						'max-height':'100%'
+						'max-height': '100%'
 					});
 				});
 
@@ -264,36 +264,37 @@ $(window).on('load', function() {
 
 				// varaible that control the visualization of the map, the zoom level and the sidebar
 				var h = (window.innerHeight ||
-						 document.documentElement.clientHeight ||
-						 document.body.clientHeight);
+					document.documentElement.clientHeight ||
+					document.body.clientHeight);
 				if (h > 540) {
 					d3.select(".list-container").style("height", h + "px");
 					d3.select("#d3-map-wrapper").style("height", h + "px");
 				}
 				var w = (window.innerWidth ||
-						 document.documentElement.clientWidth ||
-						 document.body.clientWidth);
+					document.documentElement.clientWidth ||
+					document.body.clientWidth);
 				d3.select(".list-container").style("height", h - 0 + "px")
 
 				L.control.zoom({
-					position:'topright'
+					position: 'topright'
 				}).addTo(map);
 
 				var sidebar = L.control.sidebar('sidebar-left').addTo(map);
 
 				sidebar.open("home");
 
-				var sidebar1 = L.control.sidebar('sidebar-right', {position: "right"}).addTo(map);
+				var sidebar1 = L.control.sidebar('sidebar-right', { position: "right" }).addTo(map);
 
 				sidebar1.open("home1");
 				//the map bound and setting the max bounds
 				map.bounds = [],
 					map.setMaxBounds([
-					[4.5,29.5],
-					[-1.5,34.5]
-				])
-				map.options.maxZoom=12;
-				map.options.minZoom=7;
+						[4.5, 29.5],
+						[-1.5, 34.5]
+					])
+				map.options.maxZoom = 12;
+				map.options.minZoom = 7;
+				map.zoomSnap = 0.25;
 
 				var ugandaPath;
 				var domain = [+Infinity, -Infinity];
@@ -302,8 +303,8 @@ $(window).on('load', function() {
 				var width = wrapper.node().offsetWidth || 960;
 				var height = wrapper.node().offsetHeight || 480;
 				var color = d3.scale.linear().domain(domain) //http://bl.ocks.org/jfreyre/b1882159636cc9e1283a
-				.interpolate(d3.interpolateHcl)
-				.range([d3.rgb("#66f1c1"), d3.rgb('#172031')]); //#f597aa #a02842
+					.interpolate(d3.interpolateHcl)
+					.range([d3.rgb("#66f1c1"), d3.rgb('#172031')]); //#f597aa #a02842
 				//				var tooltip = d3.select(map.getPanes().overlayPane)
 				//				.append("div")
 				//				.attr("class", "d3-tooltip d3-hide");
@@ -323,84 +324,84 @@ $(window).on('load', function() {
 					var titles = d3.keys(data[0]);
 					var titlesText = ["Parish Name", "Number of agencies"]
 					var headers = table.append('thead').append('tr')
-					.selectAll('th')
-					.data(titlesText).enter()
-					.append('th')
-					.text(function (d) {
-						return d;
-					})
-					.on('click', function (d) {
-						headers.attr('class', 'header');
-						if (sortAscending) {
-							rows.sort(function(a, b) { 
-								return d3.descending(a.key, b.key);
-							});
-							sortAscending = false;
-							this.className = 'aes';
-						} 
-
-						else {
-							rows.sort(function(a,b){
-								return d3.ascending(a.key, b.key)
-							});
-						}
-
-					});
-					var rows = table.append('tbody').selectAll('tr')
-					.data(data).enter()
-					.append('tr');
-					rows.selectAll('td')
-						.data(function (d) {
-						return titles.map(function (k) {
-							if (k === 'values') {
-								return { 'value': +(d[k].length), 'name': k};
-							} 
+						.selectAll('th')
+						.data(titlesText).enter()
+						.append('th')
+						.text(function (d) {
+							return d;
+						})
+						.on('click', function (d) {
+							headers.attr('class', 'header');
+							if (sortAscending) {
+								rows.sort(function (a, b) {
+									return d3.descending(a.key, b.key);
+								});
+								sortAscending = false;
+								this.className = 'aes';
+							}
 
 							else {
-								return { 'value': d[k], 'name': k};
+								rows.sort(function (a, b) {
+									return d3.ascending(a.key, b.key)
+								});
 							}
 
 						});
-					})
-					//append data into the table 
-					.enter()
+					var rows = table.append('tbody').selectAll('tr')
+						.data(data).enter()
+						.append('tr');
+					rows.selectAll('td')
+						.data(function (d) {
+							return titles.map(function (k) {
+								if (k === 'values') {
+									return { 'value': +(d[k].length), 'name': k };
+								}
+
+								else {
+									return { 'value': d[k], 'name': k };
+								}
+
+							});
+						})
+						//append data into the table 
+						.enter()
 						.append('td')
 						.attr('data-th', function (d) {
-						return d.name;
-					})
+							return d.name;
+						})
 						.text(function (d) {
-						return d.value;
-					}).on("click", function (d) {
-						//checking if the parish data filter is equal to the district list filter
-						if (d.name === "key") {
-							var parishDataFilter = districtList.filter(function (k) {
-								if (d.value === k.key) {
-									var str = "<thead><tr><th style='border: 1px solid #ccc!important; width: 15%; text-decoration: none !important; text-align: left;'>Agency Name</th> <th style='border: 1px solid #ccc!important; width: 65%; text-decoration: none !important; text-align: left;'>Project Title</th><th style='border: 1px solid #ccc!important; width: 10%; text-decoration: none !important; border: 1px solid #ccc!important; text-align: left;'>Project Start</th><th style='border: 1px solid #ccc!important; width: 10%; text-decoration: none !important; border: 1px solid #ccc!important; text-align: left;'>Project End</th></tr></thead>";
-									//looping through the tool tip list 
-									var tooltipList = "";
-									var i = 0;
-									while (i < k.values.length) {
-										tooltipList = tooltipList + ("<tr><td style='border: 1px solid #ccc!important; width: 15%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Agency name"] + "</td> <td style='border: 1px solid #ccc!important; width: 65%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Detailed Activity description"] + "</td><td style='border: 1px solid #ccc!important; width: 10%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Start (month)"] + "</td><td style='border: 1px solid #ccc!important; text-decoration: none !important; width: 10%; text-align: left;'>" + k.values[i]["End (month)"] + "</td></tr>");
-										i++;
+							return d.value;
+						}).on("click", function (d) {
+							//checking if the parish data filter is equal to the district list filter
+							if (d.name === "key") {
+								var parishDataFilter = districtList.filter(function (k) {
+									if (d.value === k.key) {
+										var str = "<thead><tr><th style='border: 1px solid #ccc!important; width: 15%; text-decoration: none !important; text-align: left;'>Agency Name</th> <th style='border: 1px solid #ccc!important; width: 40%; text-decoration: none !important; text-align: left;'>Project Title</th><th style='border: 1px solid #ccc!important; width: 25%; text-decoration: none !important; border: 1px solid #ccc!important; text-align: left;'>Project Start</th><th style='border: 1px solid #ccc!important; width: 25%; text-decoration: none !important; border: 1px solid #ccc!important; text-align: left;'>Project End</th></tr></thead>";
+										//looping through the tool tip list 
+										var tooltipList = "";
+										var i = 0;
+										while (i < k.values.length) {
+											tooltipList = tooltipList + ("<tr><td style='border: 1px solid #ccc!important; width: 15%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Agency name"] + "</td> <td style='border: 1px solid #ccc!important; width: 40%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Detailed Activity description"] + "</td><td style='border: 1px solid #ccc!important; width: 25%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Start (month)"] + "</td><td style='border: 1px solid #ccc!important; text-decoration: none !important; width: 25%; text-align: left;'>" + k.values[i]["End (month)"] + "</td></tr>");
+											i++;
+										}
+										//getting the elements from the html page				
+										document.getElementById('tbl-title').innerHTML = d.value;
+										document.getElementById('tbl-header').innerHTML = str;
+										document.getElementById('tbl-content').innerHTML = tooltipList;
+										modal.style.display = "block";
 									}
-									//getting the elements from the html page				
-									document.getElementById('tbl-title').innerHTML = d.value;
-									document.getElementById('tbl-header').innerHTML = str;
-									document.getElementById('tbl-content').innerHTML = tooltipList;
-									modal.style.display = "block";	
-								}
-							});
-							}	
-					})
+								});
+							}
+						})
 
-						.on("mouseover", function (d){
-						if(d.name === "key") {
-							d3.select(this).style("cursor", "pointer");
-						}
-					});
+						.on("mouseover", function (d) {
+							if (d.name === "key") {
+								d3.select(this).style("cursor", "pointer");
+							}
+						});
 				}
 
-				var top5Values = datasetNest.sort(function(a,b){
+				var top5Values = datasetNest.sort(function (a, b) {
 					return d3.ascending(a.key, b.key);
 				}).slice(1);
 				updateTable(top5Values);
@@ -414,87 +415,87 @@ $(window).on('load', function() {
 					var titles = d3.keys(data[0]);
 					var titlesText = ["Name of Agency", "Number of activities"]
 					var headers = table.append('thead').append('tr')
-					.selectAll('th')
-					.data(titlesText).enter()
-					.append('th')
-					.text(function (d) {
-						return d;
-					})
-					.on('click', function (d) {
-						headers.attr('class', 'header');
-						if (sortAscending) {
-							rows.sort(function(a,b){						
-								return d3.descending(a.key, b.key)
-							});
-							sortAscending = false;
-							this.className = 'aes';
-						} 
-
-						else {
-							rows.sort(function(a,b){
-								return d3.ascending(a.key, b.key)
-							});
-							sortAscending = true;
-							this.className = 'des';
-						}
-
-					});
-					var rows = table.append('tbody').selectAll('tr')
-					.data(data).enter()
-					.append('tr');
-					rows.selectAll('td')
-						.data(function (d) {
-						return titles.map(function (k) {
-							if (k === 'values') {
-								return { 'value': +(d[k].length), 'name': k};
-							} 
+						.selectAll('th')
+						.data(titlesText).enter()
+						.append('th')
+						.text(function (d) {
+							return d;
+						})
+						.on('click', function (d) {
+							headers.attr('class', 'header');
+							if (sortAscending) {
+								rows.sort(function (a, b) {
+									return d3.descending(a.key, b.key)
+								});
+								sortAscending = false;
+								this.className = 'aes';
+							}
 
 							else {
-								return { 'value': d[k], 'name': k};
+								rows.sort(function (a, b) {
+									return d3.ascending(a.key, b.key)
+								});
+								sortAscending = true;
+								this.className = 'des';
 							}
 
 						});
-					}).enter()
+					var rows = table.append('tbody').selectAll('tr')
+						.data(data).enter()
+						.append('tr');
+					rows.selectAll('td')
+						.data(function (d) {
+							return titles.map(function (k) {
+								if (k === 'values') {
+									return { 'value': +(d[k].length), 'name': k };
+								}
+
+								else {
+									return { 'value': d[k], 'name': k };
+								}
+
+							});
+						}).enter()
 						.append('td')
 						.attr('data-th', function (d) {
-						return d.name;
-					})
+							return d.name;
+						})
 						.text(function (d) {
-						return d.value;
-					}).on("click", function (d) {
+							return d.value;
+						}).on("click", function (d) {
 
-						if (d.name === "key") {
-							var agencyDataFilter = agencyList.filter(function (k) {
-								if (d.value === k.key) {
-									var str = "<thead><tr><th style='border: 1px solid #ccc!important; width: 15%; text-decoration: none !important; text-align: left;'>Parish</th> <th style='border: 1px solid #ccc!important; width: 65%; text-decoration: none !important; text-align: left;'>Project Title</th><th style='border: 1px solid #ccc!important; width: 10%; text-decoration: none !important; border: 1px solid #ccc!important; text-align: left;'>Project Start</th><th style='border: 1px solid #ccc!important; width: 10%; text-decoration: none !important; border: 1px solid #ccc!important; text-align: left;'>Project End</th></tr></thead>";
+							if (d.name === "key") {
+								var agencyDataFilter = agencyList.filter(function (k) {
+									if (d.value === k.key) {
+										var str = "<thead><tr><th style='border: 1px solid #ccc!important; width: 15%; text-decoration: none !important; text-align: left;'>Parish</th> <th style='border: 1px solid #ccc!important; width: 40%; text-decoration: none !important; text-align: left;'>Project Title</th><th style='border: 1px solid #ccc!important; width: 25%; text-decoration: none !important; border: 1px solid #ccc!important; text-align: left;'>Project Start</th><th style='border: 1px solid #ccc!important; width: 25%; text-decoration: none !important; border: 1px solid #ccc!important; text-align: left;'>Project End</th></tr></thead>";
 
-									var tooltipList = "";
-									var i = 0;
-									while (i < k.values.length) {
-										tooltipList = tooltipList + ("<tr><td style='border: 1px solid #ccc!important; width: 15%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Parish"] + "</td> <td style='border: 1px solid #ccc!important; width: 65%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Detailed Activity description"] + "</td><td style='border: 1px solid #ccc!important; width: 10%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Start (month)"] + "</td><td style='border: 1px solid #ccc!important; text-decoration: none !important; width: 10%; text-align: left;'>" + k.values[i]["End (month)"] + "</td></tr>");
-										i++;
-									}					
-									document.getElementById('tbl-title').innerHTML = d.value;
-									document.getElementById('tbl-header').innerHTML = str;
-									document.getElementById('tbl-content').innerHTML = tooltipList;
-									modal.style.display = "block";	
-								}
-							});
-							}	
-					})
-						.on("mouseover", function (d){
-						if(d.name === "key") {
-							d3.select(this).style("cursor", "pointer");
-						}
-					});
+										var tooltipList = "";
+										var i = 0;
+										while (i < k.values.length) {
+											tooltipList = tooltipList + ("<tr><td style='border: 1px solid #ccc!important; width: 15%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Parish"] + "</td> <td style='border: 1px solid #ccc!important; width: 40%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Detailed Activity description"] + "</td><td style='border: 1px solid #ccc!important; width: 25%; text-decoration: none !important; text-align: left;'>" + k.values[i]["Start (month)"] + "</td><td style='border: 1px solid #ccc!important; text-decoration: none !important; width: 25%; text-align: left;'>" + k.values[i]["End (month)"] + "</td></tr>");
+											i++;
+										}
+										document.getElementById('tbl-title').innerHTML = d.value;
+										document.getElementById('tbl-header').innerHTML = str;
+										document.getElementById('tbl-content').innerHTML = tooltipList;
+										modal.style.display = "block";
+									}
+								});
+							}
+						})
+						.on("mouseover", function (d) {
+							if (d.name === "key") {
+								d3.select(this).style("cursor", "pointer");
+							}
+						});
 				}
 
-				var top5Values = datasetAgency.sort(function(a,b){
+				var top5Values = datasetAgency.sort(function (a, b) {
 					return d3.ascending(a.key, b.key);
 				}).slice(1);
 				updateTable1(top5Values);
 
-// defining the counties in an empty array
+				// defining the counties in an empty array
 				var countries = [];
 				var countriesOverlay = L.d3SvgOverlay(function (sel, proj) {
 					var projection = proj.pathFromGeojson.projection;
@@ -508,144 +509,87 @@ $(window).on('load', function() {
 						.attr("style", "pointer-events:all!important")
 						.style("cursor", "pointer")
 						.each(function (d) {
-						d.properties.centroid = projection(d3.geo.centroid(d));
-						datasetNest.map(function (c) {
-							if (c.key === d.properties.DNAME_06) {
-								d.properties._sectorList = d3.nest().key(function (a) {
-									return a.Sector_Other;
-								}).entries(c.values);
-								d.properties._agencyList = d3.nest().key(function (a) {
-									return a["Agency name"];
-								}).entries(c.values);
-								d.properties._unAgencyList = d3.nest().key(function (a) {
-									return a.Actor_Type;
-									//return a.Actor_Type;
-								})
-								.entries(c.values);
-								d.properties._ipAgencyList = d3.nest().key(function (a) {
-									return a.Actor_Type;
-								}).entries(c.values);
-								d.properties._opAgencyList = d3.nest().key(function (a) {
-									return a.Actor_Type;
-								}).entries(c.values);
-								domain[0] = d.properties._agencyList.length < domain[0] ? d.properties._agencyList.length :
-								domain[
-									0];
-								domain[1] = d.properties._agencyList.length > domain[1] ? d.properties._agencyList.length :
-								domain[
-									1];
-								color.domain(domain);
-							}
-						});
-					})
+							d.properties.centroid = projection(d3.geo.centroid(d));
+							datasetNest.map(function (c) {
+								if (c.key === d.properties.DNAME_06) {
+									d.properties._sectorList = d3.nest().key(function (a) {
+										return a.Sector_Other;
+									}).entries(c.values);
+									d.properties._agencyList = d3.nest().key(function (a) {
+										return a["Agency name"];
+									}).entries(c.values);
+									d.properties._unAgencyList = d3.nest().key(function (a) {
+										return a.Actor_Type;
+										//return a.Actor_Type;
+									})
+										.entries(c.values);
+									d.properties._ipAgencyList = d3.nest().key(function (a) {
+										return a.Actor_Type;
+									}).entries(c.values);
+									d.properties._opAgencyList = d3.nest().key(function (a) {
+										return a.Actor_Type;
+									}).entries(c.values);
+									domain[0] = d.properties._agencyList.length < domain[0] ? d.properties._agencyList.length :
+										domain[
+										0];
+									domain[1] = d.properties._agencyList.length > domain[1] ? d.properties._agencyList.length :
+										domain[
+										1];
+									color.domain(domain);
+								}
+							});
+						})
 						.style("stroke", function (d) {
-						return d.properties._agencyList ? "#f00" : "#00000000"; //#3CB371
-					})
-					//						.on("click", function (d) {
-					//						var svg = d3.select(this.parentNode.parentNode.parentNode);
-					//						var mouse = d3.mouse(svg.node()).map(function (d) {
-					//							return parseInt(d);
-					//						});
-					//						var str = "<tr><button type='button' class='close' onclick='$(this).parent().hide();'>×</button></tr>" +
-					//							"<th><br/></th><tr><th>Parish:</th> <th style='right: 0;'><b>" + d.properties.DNAME_06 + "</b></th></tr>";
-					//						if (d.properties._sectorList && d.properties._agencyList) {
-					//
-					//							var agencyListAbb = d3.values(d.properties._agencyList).map(function (d) {
-					//								return d.values.map(function (v) {
-					//									return v.Abbreviation;
-					//								});
-					//							});
-					//
-					//							var tooltipList = "";
-					//							var i = 0;
-					//							while (i < agencyListAbb.length) {
-					//								tooltipList = tooltipList + ("<p>" + agencyListAbb[i][0] + "</p>");
-					//								i++
-					//							}
-					//
-					//							str = str + "<br><tr><th>Number of Agencies:</th> <th><b>" + d.properties._agencyList.length + "</b></th></tr>" +
-					//								"<br><br>List of Agencies:<br><th><b>" + 
-					//								"</b></th></tr><th></th><div><tr> <th style='text-align: right;'>" + tooltipList + "</th></tr></div>";
-					//						}
-					//						tooltip.html(str);
-					//
-					//						var box = tooltip.node().getBoundingClientRect() || {
-					//							height: 0
-					//						};
-					//
-					//
-					//						tooltip
-					//							.classed("d3-hide", false)
-					//							.attr("style", "left:" + (mouse[0] + 15) + "px;top:" + (mouse[1] < height / 2 ? mouse[1] : mouse[
-					//							1] - box.height) + "px; min-width: 200px; max-width: 400px; max-height: 300px; overflow-y: auto;");
-					//						tooltip
-					//					})
+							return d.properties._agencyList ? "#f00" : "#00000000"; //#3CB371
+						})
 						.on("mouseover", highlightFeature)
 						.on("mouseout", resetHighlight)
 						.style("fill", function (d) {
-						return d.properties._agencyList ? "#00000000" : "#00000000"; //#3CB371
-					})
+							return d.properties._agencyList ? "#00000000" : "#00000000"; //#3CB371
+						})
 						.attr("class", function (d) {
-						return "district district-" + d.properties.DNAME_06.replaceAll('[ ]', "_");
-					});
-
-					//			ugandaPath.on("mouseover", function (d) {
-					//
-					//				var popup = L.popup()
-					//				.setContent("<b>" + d.properties.s + " Division</b></br>" +
-					//							"<b>Parish: </b>" + d.properties.pname + "</br>");
-					//
-					//				d.bindPopup(popup);
-					//
-					//				d.on("mouseover", function(e){
-					//					this.openPopup();	
-					//				})
-					//
-					//				d.on("mouseout", function(e){
-					//					this.closePopup();	
-					//				})
-					//
-					//			})
-
-					ugandaPath.attr('stroke-width', proj.scale*1.5)
-						.each(function (d) {
-						d.properties.centroid = projection(d3.geo.centroid(d)); // ugandaCentroid = d.properties.centroid;
-						datasetNest.map(function (c) {
-							if (c.key === d.properties.DNAME_06) {
-								d.properties._sectorList = d3.nest().key(function (a) {
-									return a.Sector_Other;
-								}).entries(c.values);
-								d.properties._agencyList = d3.nest().key(function (a) {
-									return a["Agency name"];
-								}).entries(c.values);
-								d.properties._unAgencyList = d3.nest().key(function (a) {
-									return a.Name;
-								}).entries(c.values);
-								d.properties._ipAgencyList = d3.nest().key(function (a) {
-									return a.Name;
-								}).entries(c.values);
-								d.properties._opAgencyList = d3.nest().key(function (a) {
-									return a.Name;
-								}).entries(c.values);
-								domain[0] = d.properties._agencyList.length < domain[0] ? d.properties._agencyList.length :
-								domain[
-									0];
-								domain[1] = d.properties._agencyList.length > domain[1] ? d.properties._agencyList.length :
-								domain[
-									1];
-								color.domain(domain);
-							}
+							return "district district-" + d.properties.DNAME_06.replaceAll('[ ]', "_");
 						});
-					})
+
+					ugandaPath.attr('stroke-width', proj.scale * 1.5)
+						.each(function (d) {
+							d.properties.centroid = projection(d3.geo.centroid(d)); // ugandaCentroid = d.properties.centroid;
+							datasetNest.map(function (c) {
+								if (c.key === d.properties.DNAME_06) {
+									d.properties._sectorList = d3.nest().key(function (a) {
+										return a.Sector_Other;
+									}).entries(c.values);
+									d.properties._agencyList = d3.nest().key(function (a) {
+										return a["Agency name"];
+									}).entries(c.values);
+									d.properties._unAgencyList = d3.nest().key(function (a) {
+										return a.Name;
+									}).entries(c.values);
+									d.properties._ipAgencyList = d3.nest().key(function (a) {
+										return a.Name;
+									}).entries(c.values);
+									d.properties._opAgencyList = d3.nest().key(function (a) {
+										return a.Name;
+									}).entries(c.values);
+									domain[0] = d.properties._agencyList.length < domain[0] ? d.properties._agencyList.length :
+										domain[
+										0];
+									domain[1] = d.properties._agencyList.length > domain[1] ? d.properties._agencyList.length :
+										domain[
+										1];
+									color.domain(domain);
+								}
+							});
+						})
 						.style("stroke", function (d) {
-						return d.properties._agencyList ? "#f00" : "#00000000"; //#3CB371
-					})
+							return d.properties._agencyList ? "#f00" : "#00000000"; //#3CB371
+						})
 						.style("fill", function (d) {
-						return d.properties._agencyList ? "#00000000" : "#00000000"; //#3CB371
-					})
+							return d.properties._agencyList ? "#00000000" : "#00000000"; //#3CB371
+						})
 						.attr("class", function (d) {
-						return "district district-" + d.properties.DNAME_06.replaceAll('[ ]', "_");
-					});
+							return "district district-" + d.properties.DNAME_06.replaceAll('[ ]', "_");
+						});
 					ugandaPath.exit().remove();
 				});
 
@@ -688,35 +632,35 @@ $(window).on('load', function() {
 									return a.Actor_Type;
 								}).entries(c.values);
 								domain[0] = d.properties._agencyList.length < domain[0] ? d.properties._agencyList.length :
-								domain[
+									domain[
 									0];
 								domain[1] = d.properties._agencyList.length > domain[1] ? d.properties._agencyList.length :
-								domain[
+									domain[
 									1];
 								color.domain(domain);
 							}
 						});
 					})
 						.style("stroke", function (d) {
-						return d.properties._agencyList ? "#f00" : "#00000000"; //#3CB371
-					})
+							return d.properties._agencyList ? "#f00" : "#00000000"; //#3CB371
+						})
 						.style("fill", function (d) {
-						if(d.properties._agencyList){
-							return d.properties._agencyList.length ? "#00000000" : "#00000000"; //#3CB371
-						}
-						return "#00000000";
-					});
-					var top5Values = datasetNest.sort(function(a,b){
+							if (d.properties._agencyList) {
+								return d.properties._agencyList.length ? "#00000000" : "#00000000"; //#3CB371
+							}
+							return "#00000000";
+						});
+					var top5Values = datasetNest.sort(function (a, b) {
 						return d3.ascending(a.key, b.key)
 					}).slice(1);
 					updateTable(top5Values);
 
-					var top5Values = datasetAgency.sort(function(a,b){
+					var top5Values = datasetAgency.sort(function (a, b) {
 						return d3.ascending(a.key, b.key)
 					}).slice(1);
 					updateTable1(top5Values);
 
-					var beneficiaries = d3.sum(points, function(d){return parseFloat(d.Beneficiaries)});
+					var beneficiaries = d3.sum(points, function (d) { return parseFloat(d.Beneficiaries) });
 
 					global.beneficiaryCount = beneficiaries;
 
@@ -841,48 +785,48 @@ $(window).on('load', function() {
 
 					ugandaPath.each(function (d) {
 						d.properties._numberOfAgencies = 0
-						selectedDataset.map(function(c) {
+						selectedDataset.map(function (c) {
 							if (c.Parish === d.properties.DNAME_06) {
 								d.properties._numberOfAgencies = d.properties._numberOfAgencies + 1;
 								domain[0] = d.properties._numberOfAgencies < domain[0] ? d.properties._numberOfAgencies :
-								domain[
+									domain[
 									0];
 								domain[1] = d.properties._numberOfAgencies > domain[1] ? d.properties._numberOfAgencies :
-								domain[
+									domain[
 									1];
 								color.domain(domain);
 							}
 						});
 					})
 						.style("stroke", function (d) {
-						return d.properties._numberOfAgencies ? "#f00" : "#00000000"; //#3CB371
-					})
+							return d.properties._numberOfAgencies ? "#f00" : "#00000000"; //#3CB371
+						})
 						.style("fill", function (d) {
-						return d.properties._numberOfAgencies ? "#00000000" : "#00000000"; //#3CB371
-					});
+							return d.properties._numberOfAgencies ? "#00000000" : "#00000000"; //#3CB371
+						});
 
 					var selectedDatasetNest = d3.nest()
-					.key(function(d){
-						return d.Parish; 
-					}).entries(selectedDataset);
+						.key(function (d) {
+							return d.Parish;
+						}).entries(selectedDataset);
 
 					var selectedDatasetAgency = d3.nest()
-					.key(function(d){
-						return d["Agency name"]; 
-					}).entries(selectedDataset);
+						.key(function (d) {
+							return d["Agency name"];
+						}).entries(selectedDataset);
 
-					var top5Values = selectedDatasetNest.sort(function(a,b){
+					var top5Values = selectedDatasetNest.sort(function (a, b) {
 						return d3.ascending(a.key, b.key)
 					});
 					updateTable(top5Values);
 
-					var top5Values = selectedDatasetAgency.sort(function(a,b){
+					var top5Values = selectedDatasetAgency.sort(function (a, b) {
 						return d3.ascending(a.key, b.key)
 					});
 					updateTable1(top5Values);
 
 
-					beneficiaries = d3.sum(selectedDataset, function(d){return parseFloat(d.Beneficiaries)});
+					beneficiaries = d3.sum(selectedDataset, function (d) { return parseFloat(d.Beneficiaries) });
 
 					d3.select("#beneficiary-count").text(beneficiaries);
 
@@ -1033,138 +977,143 @@ $(window).on('load', function() {
 					if (districtList) {
 						d3.select("#district-count").text(districtList.length);
 						var _districtList = d3.select("#district-list").selectAll("p")
-						.data(districtList);
-						_districtList.enter().append("p")	
+							.data(districtList);
+						_districtList.enter().append("p")
 							.text(function (d) {
-							return d.Parish;
-						})
+								return d.Parish;
+							})
 							.on("click", function (c) {
-							d3.selectAll(".labels").style("opacity", opacity);
-							var needRemove = $(d3.select(this).node()).hasClass("d3-active"); //d3.select(this).attr("class");//d3-active
-							d3.select(this).classed("d3-active", !needRemove).style("background", needRemove ? "transparent" : "#13988e");
-							global.currentEvent = "district";
-							myFilter(c, global.currentEvent, needRemove);
+								d3.selectAll(".labels").style("opacity", opacity);
+								var needRemove = $(d3.select(this).node()).hasClass("d3-active"); //d3.select(this).attr("class");//d3-active
+								d3.select(this).classed("d3-active", !needRemove).style("background", needRemove ? "transparent" : "#13988e");
+								global.currentEvent = "district";
+								myFilter(c, global.currentEvent, needRemove);
 
-							global.selectedDistrict.map(function (a) {
-								d3.selectAll(".district-" + a.key.toLowerCase().replaceAll('[ ]', "-")).style("opacity", 1);
+								global.selectedDistrict.map(function (a) {
+									d3.selectAll(".district-" + a.key.toLowerCase().replaceAll('[ ]', "-")).style("opacity", 1);
+								});
+								if (global.selectedDistrict.length === 0) {
+									refreshMap();
+								}
 							});
-							if(global.selectedDistrict.length === 0){
-								refreshMap();}
-						});
 						_districtList
 							.attr("class", function (d) {
-							return "district-list-" + d.key.replaceAll('[ ]', "_");
-						})
+								return "district-list-" + d.key.replaceAll('[ ]', "_");
+							})
 							.text(function (d) {
-							return d.key;
-						});
+								return d.key;
+							});
 						_districtList.exit().remove();
 					}
 
 					if (sectorList) {
 						d3.select("#sector-count").text(sectorList.length);
 						var _sectorList = d3.select("#sector-list").selectAll("p")
-						.data(sectorList);
+							.data(sectorList);
 						_sectorList.enter().append("p")
-							.attr("class", function(d){
-							return d.key.replace(/\s/g,'');
-						})
+							.attr("class", function (d) {
+								return d.key.replace(/\s/g, '');
+							})
 							.text(function (d) {
-							//return d.key;
-						})
-						// .style("background", "transparent")
+								//return d.key;
+							})
+							// .style("background", "transparent")
 							.on("click", function (c) {
-							// d3.select(this.parentNode).selectAll("p").style("background", "transparent");
-							// d3.select(this).style("background", "#8cc4d3");
-							var needRemove = $(d3.select(this).node()).hasClass("d3-active"); //d3.select(this).attr("class");//d3-active
-							d3.select(this).classed("d3-active", !needRemove).style("background", needRemove ? "transparent" :"#13988e");
-							global.currentEvent = "sector";
-							myFilter(c, global.currentEvent, needRemove);
-							// myFilterBySector(c, needRemove);
-							if(global.selectedSector.length === 0){
-								refreshMap();}
-						});
+								// d3.select(this.parentNode).selectAll("p").style("background", "transparent");
+								// d3.select(this).style("background", "#8cc4d3");
+								var needRemove = $(d3.select(this).node()).hasClass("d3-active"); //d3.select(this).attr("class");//d3-active
+								d3.select(this).classed("d3-active", !needRemove).style("background", needRemove ? "transparent" : "#13988e");
+								global.currentEvent = "sector";
+								myFilter(c, global.currentEvent, needRemove);
+								// myFilterBySector(c, needRemove);
+								if (global.selectedSector.length === 0) {
+									refreshMap();
+								}
+							});
 						_sectorList //.transition().duration(duration)
-							.attr("class", function(d){
-							return d.key.replace(/\s/g,'');
-						})
+							.attr("class", function (d) {
+								return d.key.replace(/\s/g, '');
+							})
 							.text(function (d) {
-							return d.key;
-						});
+								return d.key;
+							});
 						_sectorList.exit().remove();
 					}
 
 					if (agencyList) {
 						d3.select("#agency-count").text(agencyList.length);
 						var _agencyList = d3.select("#agency-list").selectAll("p")
-						.data(agencyList);
+							.data(agencyList);
 						_agencyList.enter().append("p")
-						// .style("background", "transparent")
+							// .style("background", "transparent")
 							.on("click", function (c) {
 
-							var needRemove = $(d3.select(this).node()).hasClass("d3-active"); //d3.select(this).attr("class");//d3-active
-							d3.select(this).classed("d3-active", !needRemove).style("background", needRemove ? "transparent" : "#13988e");
-							// myFilterByAgency(c, needRemove);
-							global.currentEvent = "agency"
-							myFilter(c, global.currentEvent, needRemove);
-							if(global.selectedAgency.length === 0){
-								refreshMap();}
+								var needRemove = $(d3.select(this).node()).hasClass("d3-active"); //d3.select(this).attr("class");//d3-active
+								d3.select(this).classed("d3-active", !needRemove).style("background", needRemove ? "transparent" : "#13988e");
+								// myFilterByAgency(c, needRemove);
+								global.currentEvent = "agency"
+								myFilter(c, global.currentEvent, needRemove);
+								if (global.selectedAgency.length === 0) {
+									refreshMap();
+								}
 
 
-						});
+							});
 						_agencyList
-							.html(function(d) {
-							return d.key;
-						});
+							.html(function (d) {
+								return d.key;
+							});
 						_agencyList.exit().remove();
 					}
 
 					if (donorList) {
 						d3.select("#donor-count").text(donorList.length);
 						var _donorList = d3.select("#donor-list").selectAll("p")
-						.data(donorList);
+							.data(donorList);
 						_donorList.enter().append("p")
 							.text(function (d) {
-							return d.key;
-						})
+								return d.key;
+							})
 							.on("click", function (c) {
-							var needRemove = $(d3.select(this).node()).hasClass("d3-active"); //d3.select(this).attr("class");//d3-active
-							d3.select(this).classed("d3-active", !needRemove).style("background", needRemove ? "transparent" :"#13988e");
-							// myFilterByAgency(c, needRemove);
-							global.currentEvent = "donor";
-							myFilter(c, global.currentEvent, needRemove);
-							if(global.selectedDonor.length === 0){
-								refreshMap();}
-						});
+								var needRemove = $(d3.select(this).node()).hasClass("d3-active"); //d3.select(this).attr("class");//d3-active
+								d3.select(this).classed("d3-active", !needRemove).style("background", needRemove ? "transparent" : "#13988e");
+								// myFilterByAgency(c, needRemove);
+								global.currentEvent = "donor";
+								myFilter(c, global.currentEvent, needRemove);
+								if (global.selectedDonor.length === 0) {
+									refreshMap();
+								}
+							});
 						_donorList
 							.text(function (d) {
-							return d.key;
-						});
+								return d.key;
+							});
 						_donorList.exit().remove();
 					}
 
 					if (actorTypeList) {
 						d3.select("#actor-type-count").text(actorTypeList.length);
 						var _actorTypeList = d3.select("#actor-type-list").selectAll("p")
-						.data(actorTypeList);
+							.data(actorTypeList);
 						_actorTypeList.enter().append("p")
 							.text(function (d) {
-							return d.key;
-						})
-						// .style("background", "transparent")
+								return d.key;
+							})
+							// .style("background", "transparent")
 							.on("click", function (c) {
-							var needRemove = $(d3.select(this).node()).hasClass("d3-active"); //d3.select(this).attr("class");//d3-active
-							d3.select(this).classed("d3-active", !needRemove).style("background", needRemove ? "transparent" :"#13988e");
-							// myFilterByAgency(c, needRemove);
-							global.currentEvent = "actor-type"
-							myFilter(c, global.currentEvent, needRemove);
-							if(global.selectedActorType.length === 0){
-								refreshMap();}
-						});
+								var needRemove = $(d3.select(this).node()).hasClass("d3-active"); //d3.select(this).attr("class");//d3-active
+								d3.select(this).classed("d3-active", !needRemove).style("background", needRemove ? "transparent" : "#13988e");
+								// myFilterByAgency(c, needRemove);
+								global.currentEvent = "actor-type"
+								myFilter(c, global.currentEvent, needRemove);
+								if (global.selectedActorType.length === 0) {
+									refreshMap();
+								}
+							});
 						_actorTypeList
 							.text(function (d) {
-							return d.key;
-						});
+								return d.key;
+							});
 						_actorTypeList.exit().remove();
 					}
 
@@ -1174,7 +1123,7 @@ $(window).on('load', function() {
 
 				map.getPane('lowerlayers').style.zIndex = 250;
 
-				$.getJSON('data/kampalaOutline.geojson', function(data){
+				$.getJSON('data/kampalaOutline.geojson', function (data) {
 
 					function styleOutline(feature) {
 						return {
@@ -1196,45 +1145,45 @@ $(window).on('load', function() {
 				var datalayerPoverty12;
 				var datalayerChildPoverty12;
 				//functio that set the colors on the layers on the map 
-				$.getJSON('data/kampalaParishes__.geojson', function(data){
+				$.getJSON('data/kampalaParishes__.geojson', function (data) {
 					function getColorPoverty12(d) {
-						return d > 0.565  ? 'rgb(23,78,105)' :
-						d > 0.042  ? 'rgb(46,95,120)' :
-						d > 0.023  ? 'rgb(115,148,165)' :
-						d > 0.016   ? 'rgb(162,184,195)' :
-						'rgb(231,237,240)';
+						return d > 0.565 ? 'rgb(23,78,105)' :
+							d > 0.042 ? 'rgb(46,95,120)' :
+								d > 0.023 ? 'rgb(115,148,165)' :
+									d > 0.016 ? 'rgb(162,184,195)' :
+										'rgb(231,237,240)';
 					}
-					
+
 					function getColorChildPoverty12(d) {
-						return d > 0.565  ? 'rgb(23,78,105)' :
-						d > 0.042  ? 'rgb(46,95,120)' :
-						d > 0.023  ? 'rgb(115,148,165)' :
-						d > 0.016   ? 'rgb(162,184,195)' :
-						'rgb(231,237,240)';
+						return d > 0.565 ? 'rgb(23,78,105)' :
+							d > 0.042 ? 'rgb(46,95,120)' :
+								d > 0.023 ? 'rgb(115,148,165)' :
+									d > 0.016 ? 'rgb(162,184,195)' :
+										'rgb(231,237,240)';
 					}
 
 					function getColorPoverty(d) {
-						return d > 0.565  ? 'rgb(23,78,105)' :
-						d > 0.042  ? 'rgb(46,95,120)' :
-						d > 0.023  ? 'rgb(115,148,165)' :
-						d > 0.016   ? 'rgb(162,184,195)' :
-						'rgb(231,237,240)';
+						return d > 0.565 ? 'rgb(23,78,105)' :
+							d > 0.042 ? 'rgb(46,95,120)' :
+								d > 0.023 ? 'rgb(115,148,165)' :
+									d > 0.016 ? 'rgb(162,184,195)' :
+										'rgb(231,237,240)';
 					}
-					
+
 					function getColorChildPoverty(d) {
-						return d > 0.565  ? 'rgb(23,78,105)' :
-						d > 0.042  ? 'rgb(46,95,120)' :
-						d > 0.023  ? 'rgb(115,148,165)' :
-						d > 0.016   ? 'rgb(162,184,195)' :
-						'rgb(231,237,240)';
+						return d > 0.565 ? 'rgb(23,78,105)' :
+							d > 0.042 ? 'rgb(46,95,120)' :
+								d > 0.023 ? 'rgb(115,148,165)' :
+									d > 0.016 ? 'rgb(162,184,195)' :
+										'rgb(231,237,240)';
 					}
 
 					function getColorPopDensity(d) {
-						return d > 36087  ? 'rgb(23,78,105)' :
-						d > 15935  ? 'rgb(46,95,120)' :
-						d > 10934  ? 'rgb(115,148,165)' :
-						d > 6229.64   ? 'rgb(162,184,195)' :
-						'rgb(231,237,240)';
+						return d > 36087 ? 'rgb(23,78,105)' :
+							d > 15935 ? 'rgb(46,95,120)' :
+								d > 10934 ? 'rgb(115,148,165)' :
+									d > 6229.64 ? 'rgb(162,184,195)' :
+										'rgb(231,237,240)';
 					}
 
 					function stylePoverty12(feature) {
@@ -1271,7 +1220,7 @@ $(window).on('load', function() {
 							weight: 0.2
 						};
 					}
-					
+
 					function stylePopChildPoverty(feature) {
 						return {
 							color: getColorChildPoverty(feature.properties.childpov),
@@ -1289,17 +1238,17 @@ $(window).on('load', function() {
 						style: stylePopDensity
 					});
 					datalayerChildPoverty = L.geoJson(data, {
-						style: stylePopChildPoverty						
+						style: stylePopChildPoverty
 					});
 
 					datalayerPoverty12 = L.geoJson(data, {
-						style: stylePoverty12						
+						style: stylePoverty12
 					});
 					datalayerChildPoverty12 = L.geoJson(data, {
-						style: stylePopChildPoverty12						
+						style: stylePopChildPoverty12
 					});
 
-					$.getJSON('data/kampala_slum_settlement.geojson', function(data){
+					$.getJSON('data/kampala_slum_settlement.geojson', function (data) {
 						function style1(feature) {
 							return {
 								color: 'green',
@@ -1314,16 +1263,19 @@ $(window).on('load', function() {
 							style: style1
 						});
 						var overlaymaps = {
-							"Slum Boundaries" : datalayer2,
-							"Child Poverty ('12-'13)" : datalayerChildPoverty12,
-							"Household Poverty ('12-'13)" : datalayerPoverty12,
-							"Child Poverty ('16-'17)" : datalayerChildPoverty,
-							"Household Poverty ('16-'17)" : datalayer,
-							"Population Density" : datalayer1
+							"Slum Boundaries": datalayer2,
+							"Child Poverty ('12-'13)": datalayerChildPoverty12,
+							"Household Poverty ('12-'13)": datalayerPoverty12,
+							"Child Poverty ('16-'17)": datalayerChildPoverty,
+							"Household Poverty ('16-'17)": datalayer,
+							"Population Density": datalayer1
 						}
-						L.control.layers(overlaymaps, null, {autoZIndex: false,collapsed: true, position: 'topleft'}).addTo(map);
+						L.control.layers(overlaymaps, null, { autoZIndex: false, collapsed: true, position: 'topleft' }).addTo(map);
 
-						var layerRemover = L.control({position: 'topleft'});
+
+						$(".leaflet-control-layers-toggle").text("Change Layers");
+
+						var layerRemover = L.control({ position: 'topleft' });
 
 						layerRemover.onAdd = function (map) {
 
@@ -1340,17 +1292,17 @@ $(window).on('load', function() {
 
 						var removeLayers = d3.select("#removeLayers");
 
-						removeLayers.on('click', function(){
-							if(map.hasLayer(datalayer2)){
-								map.removeControl(slumLegend);	
-							} else if(map.hasLayer(datalayer) || map.hasLayer(datalayerPoverty12) ){
-								map.removeControl(householdPovertyLegend);	
-							} else if(map.hasLayer(datalayer1)){
-								map.removeControl(populationDensityLegend);	
-							} else if(map.hasLayer(datalayerChildPoverty) || map.hasLayer(datalayerChildPoverty12) ){
-								map.removeControl(childPovertyLegend);	
+						removeLayers.on('click', function () {
+							if (map.hasLayer(datalayer2)) {
+								map.removeControl(slumLegend);
+							} else if (map.hasLayer(datalayer) || map.hasLayer(datalayerPoverty12)) {
+								map.removeControl(householdPovertyLegend);
+							} else if (map.hasLayer(datalayer1)) {
+								map.removeControl(populationDensityLegend);
+							} else if (map.hasLayer(datalayerChildPoverty) || map.hasLayer(datalayerChildPoverty12)) {
+								map.removeControl(childPovertyLegend);
 							}
-							
+
 							map.removeLayer(datalayer);
 							map.removeLayer(datalayer1);
 							map.removeLayer(datalayer2);
@@ -1375,11 +1327,11 @@ $(window).on('load', function() {
 
 				// method that we will use to update the control based on feature properties passed
 				info.update = function (props) {
-					this._div.innerHTML = (props ? 'Sub County: <b>' + props.SNAME2014 + '</b><br/>' + 
-										   'Parish: <b>' + props.dist + '</b><br/><br/>' +
-										   'Number of Organisations: <b>' + props._agencyList.length  + '</b><br/>' +
-										   'Number of Sectors: <b>' + props._sectorList.length + '</b>'
-										   : 'Hover over a parish with data');
+					this._div.innerHTML = (props ? 'Sub County: <b>' + props.SNAME2014 + '</b><br/>' +
+						'Parish: <b>' + props.dist + '</b><br/><br/>' +
+						'Number of Organisations: <b>' + props._agencyList.length + '</b><br/>' +
+						'Number of Sectors: <b>' + props._sectorList.length + '</b>'
+						: 'Hover over a parish with data');
 				};
 
 				info.addTo(map);
@@ -1397,15 +1349,15 @@ $(window).on('load', function() {
 					info.update();
 				}
 
-				var populationDensityLegend = L.control({position: 'bottomright'});
-				var childPovertyLegend = L.control({position: 'bottomright'});
-				var slumLegend = L.control({position: 'bottomright'});
-				var householdPovertyLegend = L.control({position: 'bottomright'});
+				var populationDensityLegend = L.control({ position: 'bottomleft' });
+			var childPovertyLegend = L.control({ position: 'bottomleft	' });
+				var slumLegend = L.control({ position: 'bottomleft' });
+				var householdPovertyLegend = L.control({ position: 'bottomleft' });
 
 				householdPovertyLegend.onAdd = function (map) {
 					var div = L.DomUtil.create('div', 'info legend');
 					div.innerHTML +=
-						'<img src="images/povertyLegend.jpeg" alt="legend" width="302" height="215">';
+						'<img src="images/povertyLegend.jpeg" alt="legend" width="250" height="150">';
 					return div;
 				};
 
@@ -1419,7 +1371,7 @@ $(window).on('load', function() {
 				childPovertyLegend.onAdd = function (map) {
 					var div = L.DomUtil.create('div', 'info legend');
 					div.innerHTML +=
-						'<img src="images/povertyChildLegend.jpeg" alt="legend" width="302" height="237">';
+						'<img src="images/povertyChildLegend.jpeg" alt="legend" width="250" height="150">';
 					return div;
 				};
 
@@ -1435,7 +1387,7 @@ $(window).on('load', function() {
 
 				map.on('baselayerchange', function (eventLayer) {
 					// Switch to the Population legend...
-					if (eventLayer.name === "Household Poverty ('16-'17)" || eventLayer.name === "Household Poverty ('12-'13)" ) {
+					if (eventLayer.name === "Household Poverty ('16-'17)" || eventLayer.name === "Household Poverty ('12-'13)") {
 						this.removeControl(populationDensityLegend);
 						this.removeControl(childPovertyLegend);
 						this.removeControl(slumLegend);
@@ -1445,7 +1397,7 @@ $(window).on('load', function() {
 						this.removeControl(childPovertyLegend);
 						this.removeControl(slumLegend);
 						populationDensityLegend.addTo(this);
-					} else if (eventLayer.name === "Child Poverty ('16-'17)" || eventLayer.name === "Child Poverty ('12-'13)" ) { // Or switch to the Child Poverty legend...
+					} else if (eventLayer.name === "Child Poverty ('16-'17)" || eventLayer.name === "Child Poverty ('12-'13)") { // Or switch to the Child Poverty legend...
 						this.removeControl(householdPovertyLegend);
 						this.removeControl(populationDensityLegend);
 						this.removeControl(slumLegend);
@@ -1585,17 +1537,17 @@ $(window).on('load', function() {
 	var mapData;
 
 	$.ajax({
-		url:'csv/Options.csv',
-		type:'HEAD',
-		error: function() {
+		url: 'csv/Options.csv',
+		type: 'HEAD',
+		error: function () {
 			// Options.csv does not exist, so use Tabletop to fetch data from
 			// the Google sheet
 			mapData = Tabletop.init({
 				key: googleDocURL,
-				callback: function(data, mapData) { onMapDataLoad(); }
+				callback: function (data, mapData) { onMapDataLoad(); }
 			});
 		},
-		success: function() {
+		success: function () {
 			// Get all data from .csv files
 			mapData = Procsv;
 			mapData.load({

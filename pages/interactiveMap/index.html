@@ -3,311 +3,346 @@
 <meta name="viewport" content="width=device-width, user-scalable=yes">
 
 <html>
-	<head>
-		<title>Loading the map...</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+	<title>Loading the map...</title>
 
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="../../assets/web/assets/mobirise-icons/mobirise-icons.css">
-		<!--[if lte IE 8]><link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="../../assets/sidebar/css/leaflet-sidebar.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../assets/web/assets/mobirise-icons/mobirise-icons.css">
+	<!--[if lte IE 8]><link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
 
-		<!-- jQuery-->
-		<!--		<script src="scripts/jquery-3.2.0.min.js"></script>-->
-		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../assets/sidebar/css/leaflet-sidebar.css">
 
-		<link href="clickable-pop-up-boxes.css" rel="stylesheet">
-		<script src="jquery-3.3.1.js"></script>
+	<!-- jQuery-->
+	<!--		<script src="scripts/jquery-3.2.0.min.js"></script>-->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
 
-
-		<!-- Leaflet (CSS and JS) -->
-		<link rel="stylesheet" href="leaflet.css" />
-		<script src="scripts/leaflet.js"></script>
-
-		<!-- leaflet-providers -->
-		<script src="scripts/leaflet-providers/leaflet-providers.js"></script>
-
-		<!-- Tabletop -->
-		<script src="scripts/tabletop.js"></script>
+	<link href="clickable-pop-up-boxes.css" rel="stylesheet">
+	<script src="jquery-3.3.1.js"></script>
 
 
+	<!-- Leaflet (CSS and JS) -->
+	<link rel="stylesheet" href="leaflet.css" />
+	<script src="scripts/leaflet.js"></script>
+
+	<!-- leaflet-providers -->
+	<script src="scripts/leaflet-providers/leaflet-providers.js"></script>
+
+	<!-- Tabletop -->
+	<script src="scripts/tabletop.js"></script>
 
 
 
-		<!-- Mapzen Search
+
+
+	<!-- Mapzen Search
 <link rel="stylesheet" href="scripts/leaflet-geocoder/leaflet-geocoder-mapzen.css">
 <script src="scripts/leaflet-geocoder/leaflet-geocoder-mapzen.js"></script>
 -->
 
-		<!-- jQuery-CSV -->
-		<script src="scripts/jquery.csv-0.71.min.js"></script>
+	<!-- jQuery-CSV -->
+	<script src="scripts/jquery.csv-0.71.min.js"></script>
 
-		<!-- Custom style sheet -->
-		<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Custom style sheet -->
+	<link rel="stylesheet" type="text/css" href="style.css">
 
-		<!-- DataTables -->
-		<script src="scripts/jquery.dataTables.min.js"></script>
-		<link rel="stylesheet" href="jquery.dataTables.min.css" />
-		<link rel="stylesheet" href="../../assets/mobirise/css/mbr-additional.css" />
-		<link href="uganda.map.css" rel="Stylesheet" type="text/css">
-		<style>
-			body {
-				padding: 0;
-				margin: 0;
-			}
+	<!-- DataTables -->
+	<script src="scripts/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" href="jquery.dataTables.min.css" />
+	<link rel="stylesheet" href="../../assets/mobirise/css/mbr-additional.css" />
+	<link href="uganda.map.css" rel="Stylesheet" type="text/css">
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+		}
 
-			html, body, #map {
-				height: 100%;
-				font-size: 10pt;
-			}
+		html,
+		body,
+		#map {
+			height: 100%;
+			font-size: 0.8rem;
+		}
 
-			.lorem {
-				font-style: italic;
-				color: #AAA;
-			}
-		</style>
-	</head>
+		.lorem {
+			font-style: italic;
+			color: #AAA;
+		}
 
-	<body>
+		.nav-link {
+			display: block;
+			padding: .5rem .5rem !important;
+		}
+	</style>
+</head>
 
-		<div class="loader">Loading...</div>
-		<!-- The Modal -->
-		<div id="myModal" class="modal">
+<body>
 
-			<!-- Modal content -->
-			<div class="modal-content">
-				<div class="modal-header">
-					<span class="close">&times;</span>
-					<p id="modal-header" class="custom-count-header" style="font-size: 16px;">Modal Header</p>
-				</div>
-				<table id="modal-body" class="modal-body">
-				</table>
+	<div class="loader">Loading...</div>
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close">&times;</span>
+				<p id="modal-header" class="custom-count-header" style="font-size: 16px;">Modal Header</p>
 			</div>
-
+			<table id="modal-body" class="modal-body">
+			</table>
 		</div>
 
-		<div id="sidebar-left" class="sidebar collapsed">
-			<!-- Nav tabs -->
-			<div class="sidebar-tabs">
-				<ul role="tablist">
-					<li><a href="../../index.html"><i class="mbri-home mbr-iconfont mbr-iconfont-btn"></i></a></li>
-					<li id="healthButton"><a href="#health" role="tab"><img src="data/images/health.svg" alt="Health" title="Health"></a></li>
-					<li id="educationButton"><a href="#education" role="tab"><img src="data/images/education.svg" alt="Education" title="Education"></a></li>
-					<li id="protectionButton"><a href="#protection" role="tab"><img src="data/images/protection.svg" alt="Protection" title="Protection"></a></li>
-					<li id="waterButton"><a href="#water" role="tab"><img src="data/images/water.svg" alt="Water" title="Water"></a></li>
-				</ul>
+	</div>
 
-				<ul role="tablist">
-					<li><a href="#info" role="tab"><i class="fa fa-info"></i></a></li>
-				</ul>
-			</div>
+	<div id="sidebar-left" class="sidebar collapsed">
+		<!-- Nav tabs -->
+		<div class="sidebar-tabs">
+			<ul role="tablist">
+				<li><a href="../../index.html"><i class="mbri-home mbr-iconfont mbr-iconfont-btn"></i></a></li>
+				<li id="healthButton"><a href="#health" role="tab"><img src="data/images/health.svg" alt="Health"
+							title="Health"></a></li>
+				<li id="educationButton"><a href="#education" role="tab"><img src="data/images/education.svg"
+							alt="Education" title="Education"></a></li>
+				<li id="protectionButton"><a href="#protection" role="tab"><img src="data/images/protection.svg"
+							alt="Protection" title="Protection"></a></li>
+				<li id="waterButton"><a href="#water" role="tab"><img src="data/images/water.svg" alt="Water"
+							title="Water"></a></li>
+			</ul>
 
-			<!-- Tab panes -->
-			<div class="sidebar-content">
-				<div class="sidebar-pane" id="health">
-					<h1 class="sidebar-header" style="background-color: #8b0000;">
-						Health
-						<span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
-					</h1>
-
-					<div class="menu-panel">
-						<br>
-						<ul class="nav nav-tabs" role="tablist">
-							<a class="nav-item"><a id="d3-map-refresh-health" class="nav-link mbr-fonts-style show display-7" role="tab" data-toggle="tab" aria-selected="true">Reset Filters</a></a>
-							<!--							<a class="nav-item"><a id="healthOn" class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab"><span>Turn Layer Off</span></a></a>-->
-						</ul>
-					</div>
-					<div class="list-container">
-						<div class="col-md-12">
-							<p class="custom-list-header">Health <i class="glyphicon glyphicon-chevron-down"></i></p>
-							<div id="health-list" class="custom-list"></div>
-						</div>
-						<div class="col-md-12">
-							<p class="custom-list-header">Ownership <i class="glyphicon glyphicon-chevron-down"></i></p>
-							<div id="donor-list" class="custom-list"></div>
-						</div>
-						<br>
-						<br>
-					</div>
-					<div class="col-md-12">
-						<div id="healthLegend" style="background-color: #ffffff;">Legend<br>
-							<table>
-								<tr>
-									<th style="float: left;">
-										<i style="width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#8b0000;"></i> Delivery Services <br></th>
-								</tr>
-								<tr>
-									<th style="float: left;" class="healthIcon1"></th><th style="float: left;"> Antenatal Services <br>
-									</th>
-								</tr>
-								<tr>
-									<th style="float: left;">
-										<i style="border-radius: 50%;  width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#8b0000;"></i> Both Delivery and Antenatal Services <br>
-									</th>
-								</tr>
-								<tr>
-									<th style="float: left;">X&nbsp;&nbsp;&nbsp;&nbsp;</th><th style="float: left;"> Neither Delivery nor Antenatal Services <br></th>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div class="sidebar-pane" id="education">
-					<h1 class="sidebar-header" style="background-color: #008000;">
-						Education
-						<span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
-					</h1>
-
-					<div class="menu-panel">
-						<br>
-						<ul class="nav nav-tabs" role="tablist">
-							<a class="nav-item"><a id="d3-map-refresh-education" class="nav-link mbr-fonts-style show display-7" role="tab" data-toggle="tab" aria-selected="true">Reset Filters</a></a>
-							<!--							<a class="nav-item"><a id="educationOn" class="nav-link mbr-fonts-style show display-7" role="tab" data-toggle="tab"><span>Turn Layer On</span></a></a>-->
-						</ul>
-					</div>
-					<div class="list-container">
-						<div class="col-md-12">
-							<p class="custom-list-header">Education <i class="glyphicon glyphicon-chevron-down"></i></p>
-							<div id="education-list" class="custom-list"></div>
-						</div>
-						<div class="col-md-12">
-							<p class="custom-list-header">Ownership <i class="glyphicon glyphicon-chevron-down"></i></p>
-							<div id="district-list" class="custom-list"></div>
-						</div>
-						<br>
-						<br>
-					</div>
-					<div class="col-md-12">
-						<div id="educationLegend" style="background-color: #ffffff;">Legend<br>
-							<table>
-								<tr>
-									<th style="float: left;">X&nbsp;&nbsp;&nbsp;&nbsp;</th><th style="float: left;"> Non Formal School <br>
-									</th>
-								</tr>
-								<tr>
-									<th style="float: left;" class="educationIcon1"></th><th style="float: left;"> Post Primary Schools <br>
-									</th>
-								</tr>
-								<tr>
-									<th style="float: left;">
-										<i style="border-radius: 50%;  width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#008000;"></i> Pre Primary Schools <br></th>
-								</tr>
-								<tr>
-									<th style="float: left;">
-										<i style="width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#008000;"></i> Primary Schools <br>
-									</th>
-								</tr>
-								<tr>
-									<th style="float: left;" class="educationIcon2"></th><th style="float: left;"> Secondary Schools <br>
-									</th>
-								</tr>
-								<tr>
-									<th style="float: left;" class="educationIcon3"></th><th style="float: left;">  Tertiary Educational Institutions</th>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div class="sidebar-pane" id="protection">
-					<h1 class="sidebar-header" style="background-color: #ee8f25;">
-						Protection
-						<span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
-					</h1>
-
-					<div class="menu-panel">
-						<br>
-						<ul class="nav nav-tabs" role="tablist">
-							<a class="nav-item"><a id="d3-map-refresh-protection" class="nav-link mbr-fonts-style show display-7" role="tab" data-toggle="tab" aria-selected="true">Reset Filters</a></a>
-							<!--							<a class="nav-item"><a id="protectionOn" class="nav-link mbr-fonts-style show display-7" role="tab" data-toggle="tab"><span>Turn Layer On</span></a></a>-->
-						</ul>
-					</div>
-					<div class="list-container">
-						<div class="col-md-12">
-							<p class="custom-list-header">Protection <i class="glyphicon glyphicon-chevron-down"></i></p>
-							<div id="protection-list" class="custom-list"></div>
-						</div>
-						<br>
-						<br>
-
-					</div>
-					<div class="col-md-12">
-						<div id="protectionLegend" style="background-color: #ffffff;">Legend<br>
-							<table>
-								<tr>
-									<th style="float: left;">
-										<i style="border-radius: 50%;  width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#ee8f25;"></i> Police Post <br>
-									</th>
-								</tr>
-								<tr>
-									<th style="float: left;">
-										<i style="width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#ee8f25;"></i> Police Station <br>
-									</th>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div class="sidebar-pane" id="water">
-					<h1 class="sidebar-header" style="background-color: #1e90ff;">
-						Water
-						<span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
-					</h1>
-
-					<div class="menu-panel">
-						<br>
-						<ul class="nav nav-tabs" role="tablist">
-							<a class="nav-item"><a id="d3-map-refresh-water" class="nav-link mbr-fonts-style show display-7" role="tab" data-toggle="tab" aria-selected="true">Reset Filters</a></a>
-							<!--							<a class="nav-item"><a id="waterOn" class="nav-link mbr-fonts-style show display-7" role="tab" data-toggle="tab"><span>Turn Layer On</span></a></a>-->
-						</ul>
-					</div>
-					<div class="list-container">
-						<div class="col-md-12">
-							<p class="custom-list-header">Water <i class="glyphicon glyphicon-chevron-down"></i></p>
-							<div id="water-list" class="custom-list"></div>
-						</div>
-						<br>
-						<br>
-
-					</div>
-					<div class="col-md-12">
-						<div id="waterLegend" style="background-color: #ffffff;">Legend<br>
-							<table>
-								<tr>
-									<th style="float: left;">
-										<i style="border-radius: 50%;  width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#1e90ff;"></i> Protected Springs <br>
-									</th>
-								</tr>
-								<tr>
-									<th style="float: left;">
-										<i style="width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#1e90ff;"></i> Public Toilet <br>
-									</th>
-								</tr>
-								<tr>
-									<th style="float: left;" class="waterIcon1"></th><th style="float: left;">Water Reservoirs</th>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div class="sidebar-pane" id="info">
-					<h1 class="sidebar-header">
-						About Portal
-						<span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
-					</h1>
-
-					Interactive Point Map
-				</div>
-			</div>
+			<ul role="tablist">
+				<li><a href="#info" role="tab"><i class="fa fa-info"></i></a></li>
+			</ul>
 		</div>
 
+		<!-- Tab panes -->
+		<div class="sidebar-content">
+			<div class="sidebar-pane" id="health">
+				<h1 class="sidebar-header" style="background-color: #8b0000;">
+					Health Infrastructure
+					<span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+				</h1>
 
-		<div id="d3-map-container" class="sidebar-map">
-			<div id="d3-map-wrapper"></div>
+				<div class="menu-panel">
+					<br>
+					<ul class="nav nav-tabs" role="tablist">
+						<a class="nav-item"><a id="d3-map-refresh-health"
+								class="nav-link mbr-fonts-style show display-7" role="tab" data-toggle="tab"
+								aria-selected="true">Reset Filters</a></a>
+						<!--							<a class="nav-item"><a id="healthOn" class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab"><span>Turn Layer Off</span></a></a>-->
+					</ul>
+				</div>
+				<div class="list-container">
+					<div class="col-md-12">
+						<p class="custom-list-header">Health <i class="glyphicon glyphicon-chevron-down"></i></p>
+						<div id="health-list" class="custom-list"></div>
+					</div>
+					<div class="col-md-12">
+						<p class="custom-list-header">Ownership <i class="glyphicon glyphicon-chevron-down"></i></p>
+						<div id="donor-list" class="custom-list"></div>
+					</div>
+					<br>
+					<br>
+				</div>
+				<div class="col-md-12">
+					<div id="healthLegend" style="background-color: #ffffff;">Legend<br>
+						<table>
+							<tr>
+								<th style="float: left;">
+									<i style="width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#8b0000;"></i>
+									Delivery Services <br></th>
+							</tr>
+							<tr>
+								<th style="float: left;" class="healthIcon1"></th>
+								<th style="float: left;"> Antenatal Services <br>
+								</th>
+							</tr>
+							<tr>
+								<th style="float: left;">
+									<i style="border-radius: 50%;  width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#8b0000;"></i>
+									Both Delivery and Antenatal Services <br>
+								</th>
+							</tr>
+							<tr>
+								<th style="float: left;">X&nbsp;&nbsp;&nbsp;&nbsp;</th>
+								<th style="float: left;"> Neither Delivery nor Antenatal Services <br></th>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar-pane" id="education">
+				<h1 class="sidebar-header" style="background-color: #008000;">
+					Education Infrastructure
+					<span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+				</h1>
+
+				<div class="menu-panel">
+					<br>
+					<ul class="nav nav-tabs" role="tablist">
+						<a class="nav-item"><a id="d3-map-refresh-education"
+								class="nav-link mbr-fonts-style show display-7" role="tab" data-toggle="tab"
+								aria-selected="true">Reset Filters</a></a>
+						<!--							<a class="nav-item"><a id="educationOn" class="nav-link mbr-fonts-style show display-7" role="tab" data-toggle="tab"><span>Turn Layer On</span></a></a>-->
+					</ul>
+				</div>
+				<div class="list-container">
+					<div class="col-md-12">
+						<p class="custom-list-header">Education <i class="glyphicon glyphicon-chevron-down"></i></p>
+						<div id="education-list" class="custom-list"></div>
+					</div>
+					<div class="col-md-12">
+						<p class="custom-list-header">Ownership <i class="glyphicon glyphicon-chevron-down"></i></p>
+						<div id="district-list" class="custom-list"></div>
+					</div>
+					<br>
+					<br>
+				</div>
+				<div class="col-md-12">
+					<div id="educationLegend" style="background-color: #ffffff;">Legend<br>
+						<table>
+							<tr>
+								<th style="float: left;">X&nbsp;&nbsp;&nbsp;&nbsp;</th>
+								<th style="float: left;"> Non Formal School <br>
+								</th>
+							</tr>
+							<tr>
+								<th style="float: left;" class="educationIcon1"></th>
+								<th style="float: left;"> Post Primary Schools <br>
+								</th>
+							</tr>
+							<tr>
+								<th style="float: left;">
+									<i style="border-radius: 50%;  width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#008000;"></i>
+									Pre Primary Schools <br></th>
+							</tr>
+							<tr>
+								<th style="float: left;">
+									<i style="width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#008000;"></i>
+									Primary Schools <br>
+								</th>
+							</tr>
+							<tr>
+								<th style="float: left;" class="educationIcon2"></th>
+								<th style="float: left;"> Secondary Schools <br>
+								</th>
+							</tr>
+							<tr>
+								<th style="float: left;" class="educationIcon3"></th>
+								<th style="float: left;"> Tertiary Educational Institutions</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar-pane" id="protection">
+				<h1 class="sidebar-header" style="background-color: #ee8f25;">
+					Protection Infrastructure
+					<span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+				</h1>
+
+				<div class="menu-panel">
+					<br>
+					<ul class="nav nav-tabs" role="tablist">
+						<a class="nav-item"><a id="d3-map-refresh-protection"
+								class="nav-link mbr-fonts-style show display-7" role="tab" data-toggle="tab"
+								aria-selected="true">Reset Filters</a></a>
+						<!--							<a class="nav-item"><a id="protectionOn" class="nav-link mbr-fonts-style show display-7" role="tab" data-toggle="tab"><span>Turn Layer On</span></a></a>-->
+					</ul>
+				</div>
+				<div class="list-container">
+					<div class="col-md-12">
+						<p class="custom-list-header">Protection Infrastructure <i
+								class="glyphicon glyphicon-chevron-down"></i></p>
+						<div id="protection-list" class="custom-list"></div>
+					</div>
+					<br>
+					<br>
+
+				</div>
+				<div class="col-md-12">
+					<div id="protectionLegend" style="background-color: #ffffff;">Legend<br>
+						<table>
+							<tr>
+								<th style="float: left;">
+									<i style="border-radius: 50%;  width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#ee8f25;"></i>
+									Police Post <br>
+								</th>
+							</tr>
+							<tr>
+								<th style="float: left;">
+									<i style="width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#ee8f25;"></i>
+									Police Station <br>
+								</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar-pane" id="water">
+				<h1 class="sidebar-header" style="background-color: #1e90ff;">
+					Water
+					<span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+				</h1>
+
+				<div class="menu-panel">
+					<br>
+					<ul class="nav nav-tabs" role="tablist">
+						<a class="nav-item"><a id="d3-map-refresh-water" class="nav-link mbr-fonts-style show display-7"
+								role="tab" data-toggle="tab" aria-selected="true">Reset Filters</a></a>
+						<!--							<a class="nav-item"><a id="waterOn" class="nav-link mbr-fonts-style show display-7" role="tab" data-toggle="tab"><span>Turn Layer On</span></a></a>-->
+					</ul>
+				</div>
+				<div class="list-container">
+					<div class="col-md-12">
+						<p class="custom-list-header">Water <i class="glyphicon glyphicon-chevron-down"></i></p>
+						<div id="water-list" class="custom-list"></div>
+					</div>
+					<br>
+					<br>
+
+				</div>
+				<div class="col-md-12">
+					<div id="waterLegend" style="background-color: #ffffff;">Legend<br>
+						<table>
+							<tr>
+								<th style="float: left;">
+									<i style="border-radius: 50%;  width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#1e90ff;"></i>
+									Protected Springs <br>
+								</th>
+							</tr>
+							<tr>
+								<th style="float: left;">
+									<i style="width: 18px !important; height: 18px !important; display: inline-block;margin-right: 8px;opacity: 0.7;background:#1e90ff;"></i>
+									Public Toilet <br>
+								</th>
+							</tr>
+							<tr>
+								<th style="float: left;" class="waterIcon1"></th>
+								<th style="float: left;">Water Reservoirs</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar-pane" id="info">
+				<h1 class="sidebar-header">
+					About Portal
+					<span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+				</h1>
+
+				Interactive Point Map
+			</div>
 		</div>
+	</div>
 
-		<!--
+
+	<div id="d3-map-container" class="sidebar-map">
+		<div id="d3-map-wrapper"></div>
+	</div>
+
+	<!--
 <div id="d3-map-info-container">
 <section class="spaces">
 <button type="button" class="pop-button button3" data-placement="bottom" data-trigger="click" data-toggle="popover" title="Filters" data-content="Use this panel to interact with the map and put points on the map."><span>&#43;</span></button>
@@ -319,38 +354,39 @@
 -->
 
 
-		<script type="text/javascript">
-			var map = L.map('d3-map-container', {
-				attributionControl: false,
-				zoomControl: false
-				// maxBounds: [
-				// 	//south west
-				// 	[0.1458,32.4051],
-				// 	//north east
-				// 	[0.4961, 32.7822]
-				// ]
-			}).setView([0.3233, 32.5025], 12); // default center is overridden by Google Sheet options and points
-		</script>
+	<script type="text/javascript">
+		var map = L.map('d3-map-container', {
+			attributionControl: false,
+			zoomControl: false
+			// maxBounds: [
+			// 	//south west
+			// 	[0.1458,32.4051],
+			// 	//north east
+			// 	[0.4961, 32.7822]
+			// ]
+		}).setView([0.3233, 32.5025], 12); // default center is overridden by Google Sheet options and points
+	</script>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
-
-		<script src="../../assets/sidebar/js/leaflet-sidebar.js"></script>
-		<script src="scripts/queue.v1.min.js"></script>
-		<script src="scripts/d3.v3.min.js"></script>
-		<script src="scripts/leaflet-easy-button.js"></script>
-		<script src="scripts/L.D3SvgOverlay.min.js"></script>
-		<script src="scripts/leaflet-svg-shape-markers.min.js"></script>
-		<script type="text/javascript" src="google-doc-url.js"></script>
-		<script type="text/javascript" src="scripts/constants.js"></script>
-		<script type="text/javascript" src="scripts/palette.js"></script>
-		<script type="text/javascript" src="scripts/polylabel.js"></script>
-		<script type="text/javascript" src="scripts/procsv.js"></script>
-		<script type="text/javascript" src="scripts/map.js"></script>
-		<script src="clickable-pop-up-boxes.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
 
+	<script src="../../assets/sidebar/js/leaflet-sidebar.js"></script>
+	<script src="scripts/queue.v1.min.js"></script>
+	<script src="scripts/d3.v3.min.js"></script>
+	<script src="scripts/leaflet-easy-button.js"></script>
+	<script src="scripts/L.D3SvgOverlay.min.js"></script>
+	<script src="scripts/leaflet-svg-shape-markers.min.js"></script>
+	<script type="text/javascript" src="google-doc-url.js"></script>
+	<script type="text/javascript" src="scripts/constants.js"></script>
+	<script type="text/javascript" src="scripts/palette.js"></script>
+	<script type="text/javascript" src="scripts/polylabel.js"></script>
+	<script type="text/javascript" src="scripts/procsv.js"></script>
+	<script type="text/javascript" src="scripts/map.js"></script>
+	<script src="clickable-pop-up-boxes.js"></script>
 
-	</body>
+
+
+</body>
+
 </html>

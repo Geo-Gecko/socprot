@@ -49,7 +49,7 @@ body {
 }
 .display-7 {
   font-family: 'Montserrat';
-  font-size: 1rem;
+  /* font-size: 1rem; */
 }
 .display-7 > .mbr-iconfont {
   font-size: 1.6rem;
@@ -2436,12 +2436,6 @@ body {
 .cid-r4Qgxlao5L .team-item .item-caption {
   background: #efefef;
 }
-{
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-color: #f9f9f9;
-  background: linear-gradient(0deg, #f9f9f9, #149dcc);
-}
 .nav-tabs {
   -webkit-justify-content: center;
   justify-content: center;
@@ -2456,8 +2450,8 @@ body {
   font-weight: 500;
   border-radius: 3px;
   border: 1px solid grey;
-  padding: 1rem 1rem;
-  margin: 0.4rem .8rem !important;
+  /* padding: 1rem 1rem; */
+  /* margin: 0.4rem .8rem !important; */
   transition: all .5s;
   background: #ffffff;
 }

@@ -1,226 +1,202 @@
-
 {
-	"storymap":{
+	"storymap": {
 		"test": "test",
 		"slides": [
 			{
-				"type": 					"", 
-
-				"date": 					"1835",
+				"type": "",
+				"date": "1835",
 				"location": {
-					"lat": 				0.297019,
-					"lon": 				32.574709,
-					"name": 				"ANNA",
-					"zoom": 				12,
-					"line": 				true,
-					"line_color":			"#1e90ff"
+					"lat": 0.297019,
+					"lon": 32.574709,
+					"name": "ANNA",
+					"zoom": 12,
+					"line": true,
+					"line_color": "#1e90ff"
 				},
 				"text": {
-					"headline": 			"Elodie",
-					"text": 				"<p style='text-align:justify;'>Elodie represents female refugees in Kampala aged 13–17 years who are not attending school. At just 16, Elodie is the head of her household. Both her parents were killed before she and her two younger siblings – her 10-year-old sister Aminah and her eight-year-old brother Vinnie – fled the Democratic Republic of Congo (DRC). As life at the camp on the Ugandan border was very hard, Elodie decided to bring her siblings to Kampala. They now live in Katwe II, one of the city’s poorest neighbourhoods, where 77 per cent of the refugee population is from the DRC. <font size='2'> <i> (AGORA 2018:  Understanding the Needs of Urban Refugees and Host Communities Residing In Vulnerable Neighborhoods of Kampala)</i></font><br><br>At home in the DRC, Elodie was a senior three student with dreams of becoming a teacher. However, because she has to take care of her younger siblings, doesn’t speak very good English and can’t afford basic school materials, she hasn’t been able to continue her education in Uganda. Instead, she’s learning to make soap and candles on a training programme provided by a local NGO. By night, because she needs money to provide for herself and her siblings, Elodie works in a bar and as a sex worker. The family lives in a small, dilapidated cubicle-like house, which they rent for 15,000 USh per month. During the rainy seasons, water floods the whole house and, since the front door can easily be pushed open when the children are asleep, the house is unsafe.</p>"
-				
+					"headline": "Elodie",
+					"text": "<p style='text-align:justify;'>Elodie represents female refugees in Kampala aged 13–17 years who are not attending school. At just 16, Elodie is the head of her household. Both her parents were killed before she and her two younger siblings – her 10-year-old sister Aminah and her eight-year-old brother Vinnie – fled the Democratic Republic of Congo (DRC). As life at the camp on the Ugandan border was very hard, Elodie decided to bring her siblings to Kampala. They now live in Katwe II, one of the city’s poorest neighbourhoods, where 77 per cent of the refugee population is from the DRC. <font size ='2' style='background-color: #ffa50099;' style='background-color: #ffa50099;'> <i> (AGORA 2018:  Understanding the Needs of Urban Refugees and Host Communities Residing In Vulnerable Neighborhoods of Kampala)</i></font><br><br>At home in the DRC, Elodie was a senior three student with dreams of becoming a teacher. However, because she has to take care of her younger siblings, doesn’t speak very good English and can’t afford basic school materials, she hasn’t been able to continue her education in Uganda. Instead, she’s learning to make soap and candles on a training programme provided by a local NGO. By night, because she needs money to provide for herself and her siblings, Elodie works in a bar and as a sex worker. The family lives in a small, dilapidated cubicle-like house, which they rent for 15,000 USh per month. During the rainy seasons, water floods the whole house and, since the front door can easily be pushed open when the children are asleep, the house is unsafe.</p>"
 				},
 				"media": {
-					"url": 				"css/images/elodie/Step1.jpg",
-					"credit":				"UNICEF/FRANCIS EMORUT",
-					"caption":			""
-				}
-			},
-            
-            
-			{
-				"uniqueid": 				"",
-				"date": 					"1839",
-				"location": {
-					"lat": 				0.297019,
-					"lon": 				32.574709,
-					"name": 				"11:30 p.m",
-					"zoom": 				17,
-					"line": 				true,
-					"line_color":			"#1e90ff"
-				},
-				"text": {
-					"headline": 			"Home",
-					"text": 				"<p style='text-align:justify;'>At 6am, Elodie wakes up and walks to the nearest communal tap to fetch water. It takes her 15 minutes to get there and another 20 minutes to get to the front of the queue. Although she can’t understand what they’re saying, she can sense that the other people in the line are hostile. They complain about foreigners making the queues long and ask why they don’t go back to their own country. Elodie is terrified but stays in line because she and her siblings need the water. <font size='2'> <i> (AGORA 2018: Understanding the Needs of Urban Refugees and Host Communities Residing In Vulnerable Neighborhoods of Kampala)</i></font><br><br>When she gets home at 7 am, Aminah and Vinnie help Elodie to put away their bedding so that she can clean the house. Elodie then prepares porridge for breakfast, which is provided by the relief organisation she attends for vocational training. Once they’ve had breakfast, Elodie gives her siblings some of the water from the communal tap so that they can bathe in the communal bathroom they share with 15 other households. Because it is often used as a toilet, especially in the early mornings, the bathroom is littered with faeces. Elodie waits to use the clean toilets at the training organisation.</p>"
-				
-				},
-				"media": {
-					"url": 				"css/images/elodie/Step2.jpg",
-					"credit":				"UNICEF/FRANCIS EMORUT",
-					"caption":			""
+					"url": "css/images/elodie/Step1.jpg",
+					"credit": "UNICEF/FRANCIS EMORUT",
+					"caption": ""
 				}
 			},
 			{
-				"uniqueid": 				"",
-				"date": 					"1851",
+				"uniqueid": "",
+				"date": "1839",
 				"location": {
-					"lat": 				0.294755,
-					"lon": 				32.577189,
-					"zoom": 				17,
-					"line": 				true,
-					"line_color":			"#1e90ff"
+					"lat": 0.297019,
+					"lon": 32.574709,
+					"name": "11:30 p.m",
+					"zoom": 17,
+					"line": true,
+					"line_color": "#1e90ff"
 				},
 				"text": {
-					"headline": 			"Travelling to school",
-					"text": 				"<p style='text-align:justify;'>Elodie dresses her siblings and at 7.30 am walks them to school to ensure that they get there safely on Kampala’s busy roads. It takes them 20 minutes to reach the primary school in Taawo, one of the zones in Katwe II. <br> <br></p>"
-				
+					"headline": "Home",
+					"text": "<p style='text-align:justify;'>At 6am, Elodie wakes up and walks to the nearest communal tap to fetch water. It takes her 15 minutes to get there and another 20 minutes to get to the front of the queue. Although she can’t understand what they’re saying, she can sense that the other people in the line are hostile. They complain about foreigners making the queues long and ask why they don’t go back to their own country. Elodie is terrified but stays in line because she and her siblings need the water. <font size ='2' style='background-color: #ffa50099;'> <i> (AGORA 2018: Understanding the Needs of Urban Refugees and Host Communities Residing In Vulnerable Neighborhoods of Kampala)</i></font><br><br>When she gets home at 7 am, Aminah and Vinnie help Elodie to put away their bedding so that she can clean the house. Elodie then prepares porridge for breakfast, which is provided by the relief organisation she attends for vocational training. Once they’ve had breakfast, Elodie gives her siblings some of the water from the communal tap so that they can bathe in the communal bathroom they share with 15 other households. Because it is often used as a toilet, especially in the early mornings, the bathroom is littered with faeces. Elodie waits to use the clean toilets at the training organisation.</p>"
 				},
 				"media": {
-					"url": 				"css/images/elodie/Step3.jpg",
-					"credit":				"UNICEF/FRANCIS EMORUT",
-					"caption":			""
+					"url": "css/images/elodie/Step2.jpg",
+					"credit": "UNICEF/FRANCIS EMORUT",
+					"caption": ""
 				}
 			},
-
 			{
-				"uniqueid": 				"",
-				"date": 					"1862",
+				"uniqueid": "",
+				"date": "1851",
 				"location": {
-					"lat": 				0.291552,
-					"lon": 				32.58202,
-					"zoom": 				17,
-					"line": 				true
+					"lat": 0.294755,
+					"lon": 32.577189,
+					"zoom": 17,
+					"line": true,
+					"line_color": "#1e90ff"
 				},
 				"text": {
-					"headline": 			"School",
-					"text": 				"<p style='text-align:justify;'>When they reach the school, Vinnie’s male teacher threatens to send him home for not bringing a new book and pencil. Elodie tries to persuade the teacher to let her brother stay at school, and the teacher touches her and suggests that they could settle this issue at his home without anyone knowing about it. Feeling uncomfortable, Elodie says that tomorrow she will bring a new book and pencil, and the teacher agrees to let Vinnie stay at school. As she walks to the organisation where she receives her training, tears roll down Elodie’s cheeks. She misses her elder brother who used to protect her before they were separated on the journey from the DRC. <font size='2'>  (Most girls wished they were boys because boys were strong and brave, KCCA USPP FGDs with adolescent girls, 2018)</font></p>"
-				
+					"headline": "Travelling to school",
+					"text": "<p style='text-align:justify;'>Elodie dresses her siblings and at 7.30 am walks them to school to ensure that they get there safely on Kampala’s busy roads. It takes them 20 minutes to reach the primary school in Taawo, one of the zones in Katwe II. <br> <br></p>"
 				},
 				"media": {
-					"url": 				"css/images/elodie/Step4.jpg",
-					"credit":				"UNICEF/FRANCIS EMORUT",
-					"caption":			""
+					"url": "css/images/elodie/Step3.jpg",
+					"credit": "UNICEF/FRANCIS EMORUT",
+					"caption": ""
 				}
 			},
-            
-            		{
-				"uniqueid": 				"",
-				"date": 					"1862",
-				"location": {
-					"lat": 				0.291552,
-					"lon": 				32.58202,
-					"zoom": 				17,
-					"line": 				true
-				},
-				"text": {
-					"headline": 			"Training at NGO",
-					"text": 				"<p style='text-align:justify;'>At 8:30 am Elodie arrives at the NGO in Nsambya where she is being taught how to make soap and candles. She has many friends here, including some who speak her language, Lingala. She’s happy and feels safe and at home. At 9 am, Elodie goes for her first lesson, which is taught in French. She pays close attention as the teacher explains how to make soap. For Elodie, the lesson isn’t just about learning to make soap. She still hopes to become a teacher one day, and her teacher is her role model. <br><br>During break at 10.30 am, the students are given a cup of black tea and some bread. Elodie enjoys the sugary tea, but eats very little of the bread so that she can give it to Aminah and Vinnie when she gets home. After break, Elodie learns how to make candles. As she learns fast and always asks the teacher questions, her classmates ask her to help them.</p>"
-				
-				},
-				"media": {
-					"url": 				"css/images/elodie/Step5.jpg",
-					"credit":				"UNICEF/FRANCIS EMORUT",
-					"caption":			""
-				}
-			},
-            
-                      		{
-				"uniqueid": 				"",
-				"date": 					"1862",
-				"location": {
-					"lat": 				0.300204,
-					"lon": 				32.587981,
-					"zoom": 				17,
-					"line": 				true
-				},
-				"text": {
-					"headline": 			"Travelling home from training",
-					"text": 				"<p style='text-align:justify;'>When classes end at 11.40 am, Elodie gets ready to go home. On her way out, she wonders if she should tell the organisation’s counsellor about the sores she has on her private parts, but decides not to, in case the counsellor refers her to a health centre where she won’t be able to afford medical treatment. <br><br><a href=https://geo-gecko.github.io/socprot/pages/interactiveMap/index.html>See infrastructure map for Kampala</a></p>"
-				
-				},
-				"media": {
-					"url": 				"css/images/elodie/Step6.jpg",
-					"credit":				"UNICEF/FRANCIS EMORUT",
-					"caption":			""
-				}
-			},
-            
-
-                      		{
-				"uniqueid": 				"",
-				"date": 					"1862",
-				"location": {
-					"lat": 				0.297019,
-					"lon": 				32.574709,
-					"zoom": 				17,
-					"line": 				true
-				},
-				"text": {
-					"headline": 			"Home",
-					"text": 				"<p style='text-align:justify;'>When she gets home at 12.10 pm, Elodie washes the family’s dirty clothes but it’s difficult to get them clean using water from the drainage channel outside the house. Since they can only afford one meal a day, and because she has to work during the night, Elodie doesn’t eat lunch. Instead, she has a short sleep before preparing an evening meal made from maize flour and beans provided by the training organisation. When she has finished cooking, Elodie walks to Aminah and Vinnie’s school to bring them home. <br><br>Elodie makes sure that as soon as they get home they change out of their school uniforms and helps them with their homework. Then she allows them to play outside with other children in the neighbourhood before helping them to bathe using a bucket and plastic cup. After they have had dinner together and Elodie has washed the dishes, she puts Aminah and Vinnie to bed and heads off to work.</p>"
-				
-				},
-				"media": {
-					"url": 				"css/images/elodie/Step7.jpg",
-					"credit":				"UNICEF/FRANCIS EMORUT",
-					"caption":			""
-				}
-			},
-            
-                        
-                        
-                      		{
-				"uniqueid": 				"",
-				"date": 					"1862",
-				"location": {
-					"lat": 				0.297559,
-					"lon": 				32.603149,
-					"zoom": 				17,
-					"line": 				true
-				},
-				"text": {
-					"headline": 			"Work",
-					"text": 				"<p style='text-align:justify;'>Between 7.30 pm and 2 am, Elodie  works at a bar in Kabalagala. When she arrives she changes into her uniform – a black miniskirt and a white crop top. During the early hours of the evening, she serves drinks, but later in the night, male clients pay her for sex in the back rooms of the bar. When her shift ends at 2 am, Elodie secretly counts her earnings for the night, hides her tips in her bra, and goes to give her boss 80 per cent of her earnings. She then heads home on a boda-boda.</p>"
-				
-				},
-				"media": {
-					"url": 				"css/images/elodie/Step8.jpg",
-					"credit":				"UNICEF/FRANCIS EMORUT",
-					"caption":			""
-				}
-			},
-			
 			{
-				"uniqueid": 				"",
-				"date": 					"1862",
+				"uniqueid": "",
+				"date": "1862",
 				"location": {
-					"lat": 				0.297019,
-					"lon": 				32.574709,
-					"zoom": 				17,
-					"line": 				true
+					"lat": 0.291552,
+					"lon": 32.58202,
+					"zoom": 17,
+					"line": true
 				},
 				"text": {
-					"headline": 			"Home",
-					"text": 				"<p style='text-align:justify;'>After she gets home at 2.30 am, because she is too disgusted and scared to use the communal bathroom, Elodie bathes behind the house and goes to bed. She’s relieved to have earned enough to pay for her siblings’ school materials but prays for a time when she has enough money to start her own business and can afford a proper medical check – and doesn’t have to have sex with men for money. </p>"
-				
+					"headline": "School",
+					"text": "<p style='text-align:justify;'>When they reach the school, Vinnie’s male teacher threatens to send him home for not bringing a new book and pencil. Elodie tries to persuade the teacher to let her brother stay at school, and the teacher touches her and suggests that they could settle this issue at his home without anyone knowing about it. Feeling uncomfortable, Elodie says that tomorrow she will bring a new book and pencil, and the teacher agrees to let Vinnie stay at school. As she walks to the organisation where she receives her training, tears roll down Elodie’s cheeks. She misses her elder brother who used to protect her before they were separated on the journey from the DRC. <font size ='2' style='background-color: #ffa50099;'>  (Most girls wished they were boys because boys were strong and brave, KCCA USPP FGDs with adolescent girls, 2018)</font></p>"
 				},
 				"media": {
-					"url": 				"css/images/elodie/Step9.jpg",
-					"credit":				"UNICEF/FRANCIS EMORUT",
-					"caption":			""
+					"url": "css/images/elodie/Step4.jpg",
+					"credit": "UNICEF/FRANCIS EMORUT",
+					"caption": ""
 				}
 			},
-			
 			{
-				"type": 					"", 
-
-				"date": 					"1835",
+				"uniqueid": "",
+				"date": "1862",
 				"location": {
-					"lat": 				0.334995,
-					"lon": 				32.574363,
-					"name": 				"END",
-					"zoom": 				12,
-					"line": 				true,
-					"line_color":			"#1e90ff"
+					"lat": 0.291552,
+					"lon": 32.58202,
+					"zoom": 17,
+					"line": true
 				},
 				"text": {
-                "headline": "The Uganda Child Helpline",
-                "text": "<p style='text-align:justify;'>The Uganda Child Helpline, also known by its brand name Sauti, offers a toll-free telephone service on the short code 116 which is accessible on all telecommunication networks in the country. The telephone service operates 24/7 and is just one of the ways in which the Child Helpline aims to protect children. Other approaches employed by the Helpline to offer child protection include: <ul><li>Handling walk-in clients</li><li>Responding to cases reported through the U-report platform</li><li>Follow up of child abuse cases reported through various Media (including social media)</li><li>Handling cases that entail Online Child Sexual Abuse</li><li>Community awareness raising campaigns in schools, communities and on radios & television etc.</li></ul></p>"
-            },
+					"headline": "Training at NGO",
+					"text": "<p style='text-align:justify;'>At 8:30 am Elodie arrives at the NGO in Nsambya where she is being taught how to make soap and candles. She has many friends here, including some who speak her language, Lingala. She’s happy and feels safe and at home. At 9 am, Elodie goes for her first lesson, which is taught in French. She pays close attention as the teacher explains how to make soap. For Elodie, the lesson isn’t just about learning to make soap. She still hopes to become a teacher one day, and her teacher is her role model. <br><br>During break at 10.30 am, the students are given a cup of black tea and some bread. Elodie enjoys the sugary tea, but eats very little of the bread so that she can give it to Aminah and Vinnie when she gets home. After break, Elodie learns how to make candles. As she learns fast and always asks the teacher questions, her classmates ask her to help them.</p>"
+				},
 				"media": {
-					"url": 				"css/images/elodie/StepA.jpg",
-					"credit":				"UNICEF/FRANCIS EMORUT",
-					"caption":			""
+					"url": "css/images/elodie/Step5.jpg",
+					"credit": "UNICEF/FRANCIS EMORUT",
+					"caption": ""
+				}
+			},
+			{
+				"uniqueid": "",
+				"date": "1862",
+				"location": {
+					"lat": 0.300204,
+					"lon": 32.587981,
+					"zoom": 17,
+					"line": true
+				},
+				"text": {
+					"headline": "Travelling home from training",
+					"text": "<p style='text-align:justify;'>When classes end at 11.40 am, Elodie gets ready to go home. On her way out, she wonders if she should tell the organisation’s counsellor about the sores she has on her private parts, but decides not to, in case the counsellor refers her to a health centre where she won’t be able to afford medical treatment. <br><br><a href=https://geo-gecko.github.io/socprot/pages/interactiveMap/index.html>See infrastructure map for Kampala</a></p>"
+				},
+				"media": {
+					"url": "css/images/elodie/Step6.jpg",
+					"credit": "UNICEF/FRANCIS EMORUT",
+					"caption": ""
+				}
+			},
+			{
+				"uniqueid": "",
+				"date": "1862",
+				"location": {
+					"lat": 0.297019,
+					"lon": 32.574709,
+					"zoom": 17,
+					"line": true
+				},
+				"text": {
+					"headline": "Home",
+					"text": "<p style='text-align:justify;'>When she gets home at 12.10 pm, Elodie washes the family’s dirty clothes but it’s difficult to get them clean using water from the drainage channel outside the house. Since they can only afford one meal a day, and because she has to work during the night, Elodie doesn’t eat lunch. Instead, she has a short sleep before preparing an evening meal made from maize flour and beans provided by the training organisation. When she has finished cooking, Elodie walks to Aminah and Vinnie’s school to bring them home. <br><br>Elodie makes sure that as soon as they get home they change out of their school uniforms and helps them with their homework. Then she allows them to play outside with other children in the neighbourhood before helping them to bathe using a bucket and plastic cup. After they have had dinner together and Elodie has washed the dishes, she puts Aminah and Vinnie to bed and heads off to work.</p>"
+				},
+				"media": {
+					"url": "css/images/elodie/Step7.jpg",
+					"credit": "UNICEF/FRANCIS EMORUT",
+					"caption": ""
+				}
+			},
+			{
+				"uniqueid": "",
+				"date": "1862",
+				"location": {
+					"lat": 0.297559,
+					"lon": 32.603149,
+					"zoom": 17,
+					"line": true
+				},
+				"text": {
+					"headline": "Work",
+					"text": "<p style='text-align:justify;'>Between 7.30 pm and 2 am, Elodie  works at a bar in Kabalagala. When she arrives she changes into her uniform – a black miniskirt and a white crop top. During the early hours of the evening, she serves drinks, but later in the night, male clients pay her for sex in the back rooms of the bar. When her shift ends at 2 am, Elodie secretly counts her earnings for the night, hides her tips in her bra, and goes to give her boss 80 per cent of her earnings. She then heads home on a boda-boda.</p>"
+				},
+				"media": {
+					"url": "css/images/elodie/Step8.jpg",
+					"credit": "UNICEF/FRANCIS EMORUT",
+					"caption": ""
+				}
+			},
+			{
+				"uniqueid": "",
+				"date": "1862",
+				"location": {
+					"lat": 0.297019,
+					"lon": 32.574709,
+					"zoom": 17,
+					"line": true
+				},
+				"text": {
+					"headline": "Home",
+					"text": "<p style='text-align:justify;'>After she gets home at 2.30 am, because she is too disgusted and scared to use the communal bathroom, Elodie bathes behind the house and goes to bed. She’s relieved to have earned enough to pay for her siblings’ school materials but prays for a time when she has enough money to start her own business and can afford a proper medical check – and doesn’t have to have sex with men for money. </p>"
+				},
+				"media": {
+					"url": "css/images/elodie/Step9.jpg",
+					"credit": "UNICEF/FRANCIS EMORUT",
+					"caption": ""
+				}
+			},
+			{
+				"type": "",
+				"date": "1835",
+				"location": {
+					"lat": 0.334995,
+					"lon": 32.574363,
+					"name": "END",
+					"zoom": 12,
+					"line": true,
+					"line_color": "#1e90ff"
+				},
+				"text": {
+					"headline": "The Uganda Child Helpline",
+					"text": "<p style='text-align:justify;'>The Uganda Child Helpline, also known by its brand name Sauti, offers a toll-free telephone service on the short code 116 which is accessible on all telecommunication networks in the country. The telephone service operates 24/7 and is just one of the ways in which the Child Helpline aims to protect children. Other approaches employed by the Helpline to offer child protection include: <ul><li>Handling walk-in clients</li><li>Responding to cases reported through the U-report platform</li><li>Follow up of child abuse cases reported through various Media (including social media)</li><li>Handling cases that entail Online Child Sexual Abuse</li><li>Community awareness raising campaigns in schools, communities and on radios & television etc.</li></ul></p>"
+				},
+				"media": {
+					"url": "css/images/elodie/StepA.jpg",
+					"credit": "UNICEF/FRANCIS EMORUT",
+					"caption": ""
 				}
 			}
 		]
