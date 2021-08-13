@@ -1449,11 +1449,11 @@ $(window).on('load', function () {
 		addBaseMap();
 
 		// Add point markers to the map
-		var points = mapData.sheets(constants.pointsSheetName);
+		var points = mapData.Points;//sheets(constants.pointsSheetName);
 		var layers;
 		var group = '';
-		if (points && points.elements.length > 0) {
-			layers = determineLayers(points.elements);
+		if (points && points.length > 0) {
+			layers = determineLayers(points);
 		} else {
 			completePoints = true;
 		}
@@ -1543,9 +1543,11 @@ $(window).on('load', function () {
 			// Options.csv does not exist, so use Tabletop to fetch data from
 			// the Google sheet
 			mapData = Tabletop.init({
-				key: googleDocURL,
+				key: '1qPSpRwU5T1LXzv92l3V3fP8EiSZcxPGSYxINMGiNFvU',//googleDocURL,
 				callback: function (data, mapData) { onMapDataLoad(); }
 			});
+
+			console.log('1');
 		},
 		success: function () {
 			// Get all data from .csv files
@@ -1555,6 +1557,7 @@ $(window).on('load', function () {
 				tabs: ['Options', 'Points', 'Polygons', 'Polylines'],
 				callback: onMapDataLoad
 			});
+			console.log('2');
 		}
 	});
 

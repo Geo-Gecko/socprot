@@ -1,1 +1,3 @@
-var googleDocURL = 'https://docs.google.com/spreadsheets/d/1qPSpRwU5T1LXzv92l3V3fP8EiSZcxPGSYxINMGiNFvU/edit#gid=0';
+// var googleDocURL = 'https://docs.google.com/spreadsheets/d/1qPSpRwU5T1LXzv92l3V3fP8EiSZcxPGSYxINMGiNFvU/edit#gid=0';
+// var googleDocURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRwQTyD4YndL8dQooaxZXBlgTk2lMOx9lwjg2SPggGa7OlhZZ3D1v8H6PUUy83V2JnP90e2Nf3GNPku/pub?output=csv'
+var googleDocURL = 'https://docs.google.com/spreadsheets/d/1qPSpRwU5T1LXzv92l3V3fP8EiSZcxPGSYxINMGiNFvU/edit?usp=sharing';

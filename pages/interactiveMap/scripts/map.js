@@ -1862,11 +1862,11 @@ $(window).on('load', function () {
 		addBaseMap();
 
 		// Add point markers to the map
-		var points = mapData.sheets(constants.pointsSheetName);
+		var points = mapData.Points;//sheets(constants.pointsSheetName);
 		var layers;
 		var group = '';
-		if (points && points.elements.length > 0) {
-			layers = determineLayers(points.elements);
+		if (points && points.length > 0) {
+			layers = determineLayers(points);
 		} else {
 			completePoints = true;
 		}
